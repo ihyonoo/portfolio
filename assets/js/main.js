@@ -1,14 +1,13 @@
 (function () {
   const content = window.PORTFOLIO_CONTENT;
   const langButtons = document.querySelectorAll(".lang-btn");
+  const heroPoints = document.getElementById("hero-points");
+  const aboutGrid = document.getElementById("about-grid");
   const projectGrid = document.getElementById("project-grid");
   const skillsList = document.getElementById("skills-list");
   const awardsList = document.getElementById("awards-list");
   const experienceList = document.getElementById("experience-list");
-  const resumeLink = document.getElementById("resume-link");
-  const contactEmail = document.getElementById("contact-email");
-  const contactGithub = document.getElementById("contact-github");
-  const contactLinkedin = document.getElementById("contact-linkedin");
+  const contactList = document.getElementById("contact-list");
 
   let currentLang = "en";
 
@@ -16,28 +15,65 @@
     return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : ""), obj);
   }
 
-  function renderSkills(skills) {
-    skillsList.innerHTML = skills.map((skill) => `<li>${skill}</li>`).join("");
+  function renderSimpleList(container, items) {
+    container.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
   }
 
-  function renderProjects(projects, labels) {
-    projectGrid.innerHTML = projects
+  function renderHeroPoints(items) {
+    heroPoints.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
+  }
+
+  function renderProfileCards(items) {
+    aboutGrid.innerHTML = items
       .map(
-        (project) => `
-          <article class="project-card">
-            <h3 class="project-title">${project.title}</h3>
-            <p class="project-period">${project.period}</p>
-            <p class="project-summary">${project.summary}</p>
-            <div class="tag-row">
-              ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="${project.githubUrl}" target="_blank" rel="noreferrer">${labels.source}</a>
-              <a class="project-link" href="${project.liveUrl}" target="_blank" rel="noreferrer">${labels.live}</a>
-            </div>
+        (item) => `
+          <article class="stack-item">
+            <h3 class="stack-item-title">${item.title}</h3>
+            <p class="stack-item-meta">${item.meta}</p>
+            <p class="stack-item-body">${item.body}</p>
           </article>
         `
       )
+      .join("");
+  }
+
+  function renderProjects(projects) {
+    projectGrid.innerHTML = projects
+      .map((project) => {
+        const highlightsMarkup =
+          project.highlights && project.highlights.length
+            ? `
+                <ul class="project-highlights">
+                  ${project.highlights.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+              `
+            : "";
+        const linksMarkup =
+          project.links && project.links.length
+            ? `
+                <div class="project-links">
+                  ${project.links
+                    .map((link) => {
+                      const externalAttrs = /^https?:/i.test(link.url) ? ' target="_blank" rel="noreferrer"' : "";
+                      return `<a class="project-link" href="${link.url}"${externalAttrs}>${link.label}</a>`;
+                    })
+                    .join("")}
+                </div>
+              `
+            : "";
+
+        return `
+          <article class="project-card">
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-summary">${project.summary}</p>
+            ${highlightsMarkup}
+            <div class="tag-row">
+              ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
+            </div>
+            ${linksMarkup}
+          </article>
+        `;
+      })
       .join("");
   }
 
@@ -52,6 +88,15 @@
           </article>
         `
       )
+      .join("");
+  }
+
+  function renderContacts(items) {
+    contactList.innerHTML = items
+      .map((item) => {
+        const externalAttrs = /^https?:/i.test(item.url) ? ' target="_blank" rel="noreferrer"' : "";
+        return `<li><a href="${item.url}"${externalAttrs}>${item.label}: ${item.value}</a></li>`;
+      })
       .join("");
   }
 
@@ -79,21 +124,13 @@
       }
     });
 
-    renderSkills(locale.skills);
-    renderProjects(locale.projects, locale.labels);
+    renderHeroPoints(locale.heroPoints);
+    renderProfileCards(locale.about.cards);
+    renderSimpleList(skillsList, locale.skills);
+    renderProjects(locale.projects);
     renderStackList(awardsList, locale.awards);
     renderStackList(experienceList, locale.experience);
-
-    contactEmail.textContent = locale.contact.emailText;
-    contactEmail.href = locale.contact.emailUrl;
-
-    contactGithub.textContent = locale.contact.githubText;
-    contactGithub.href = locale.contact.githubUrl;
-
-    contactLinkedin.textContent = locale.contact.linkedinText;
-    contactLinkedin.href = locale.contact.linkedinUrl;
-
-    resumeLink.href = locale.resume.file;
+    renderContacts(locale.contact.items);
 
     langButtons.forEach((button) => {
       const isActive = button.dataset.lang === lang;
@@ -116,7 +153,7 @@
   function setupRevealAnimation() {
     const revealTargets = document.querySelectorAll(".reveal");
     if (!("IntersectionObserver" in window)) {
-      revealTargets.forEach((el) => el.classList.add("is-visible"));
+      revealTargets.forEach((element) => element.classList.add("is-visible"));
       return;
     }
 
@@ -132,8 +169,8 @@
       { threshold: 0.12 }
     );
 
-    revealTargets.forEach((target, idx) => {
-      target.style.transitionDelay = `${Math.min(idx * 70, 280)}ms`;
+    revealTargets.forEach((target, index) => {
+      target.style.transitionDelay = `${Math.min(index * 70, 280)}ms`;
       observer.observe(target);
     });
   }

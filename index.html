@@ -40,22 +40,8 @@
     <main id="home">
       <section class="hero reveal">
         <div class="container">
-          <p class="hero-kicker" data-i18n="hero.kicker">Portfolio</p>
           <h1 data-i18n="hero.name">Hyunwoo Choi</h1>
-          <p class="hero-subtitle" data-i18n="hero.tagline">
-            Building practical web experiences with clear UX and solid structure.
-          </p>
-          <div class="hero-actions">
-            <a
-              id="resume-link"
-              class="btn btn-primary"
-              href="assets/resume/hyunwoo-choi-resume.txt"
-              download
-              data-i18n="cta.resume"
-              >Download Resume</a
-            >
-            <a class="btn btn-secondary" href="#contact" data-i18n="cta.contact">Contact</a>
-          </div>
+          <ul id="hero-points" class="hero-points"></ul>
         </div>
       </section>
 
@@ -65,6 +51,7 @@
           <p class="section-lead" data-i18n="about.body">
             I focus on shipping maintainable products with thoughtful UI and measurable outcomes.
           </p>
+          <div id="about-grid" class="stack-list profile-grid"></div>
         </div>
       </section>
 
@@ -85,7 +72,7 @@
       <section id="awards" class="section reveal">
         <div class="container">
           <h2 data-i18n="section.awards">Awards</h2>
-          <ul id="awards-list" class="stack-list"></ul>
+          <div id="awards-list" class="stack-list"></div>
         </div>
       </section>
 
@@ -99,14 +86,7 @@
       <section id="contact" class="section reveal">
         <div class="container">
           <h2 data-i18n="section.contact">Contact</h2>
-          <p class="section-lead" data-i18n="contact.intro">
-            Open to collaboration and product-focused opportunities.
-          </p>
-          <ul class="contact-list">
-            <li><a id="contact-email" href="mailto:contact@example.com"></a></li>
-            <li><a id="contact-github" href="https://github.com" target="_blank" rel="noreferrer"></a></li>
-            <li><a id="contact-linkedin" href="https://linkedin.com" target="_blank" rel="noreferrer"></a></li>
-          </ul>
+          <ul id="contact-list" class="contact-list"></ul>
         </div>
       </section>
     </main>
