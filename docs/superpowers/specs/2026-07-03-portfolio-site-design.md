@@ -1,45 +1,52 @@
-# Portfolio Site Design
+# 포트폴리오 사이트 디자인 스펙
 
-## Goal
+## 목표
 
-Build a job-search portfolio site for Choi Hyunwoo that positions him primarily as an `AI / Computer Vision Engineer`, supported by `Backend / Server`, `Full-stack / Product`, and `Blockchain / Security` experience.
+최현우의 취업 준비용 포트폴리오 사이트를 만든다. 메인 포지션은 `AI / Computer Vision Engineer`로 잡고, 이를 `Backend / Server`, `Full-stack / Product`, `Blockchain / Security` 경험이 받쳐주는 구조로 보여준다.
 
-The site should feel professional, fast to scan, and restrained. It should use the Bugatti-inspired `DESIGN.md` as a reference for dark canvas, precise typography, hairline dividers, generous spacing, and minimal decoration, without making the portfolio feel like a luxury landing page.
+사이트는 채용 담당자가 빠르게 훑어도 핵심이 들어오고, 기술 면접관이 나중에 프로젝트 상세를 눌러 깊이를 확인할 수 있어야 한다. `DESIGN.md`의 Bugatti-inspired 디자인을 참고하되, 고급 자동차 랜딩 페이지처럼 과하게 감성적으로 만들지 않는다. 검은 캔버스, 정제된 타이포그래피, 얇은 라인, 넉넉한 여백, 절제된 인터랙션만 가져온다.
 
-## Audience
+## 대상 사용자
 
-Primary audience:
-- Recruiters and hiring managers reviewing the portfolio quickly.
-- Technical interviewers who want to inspect project depth later.
+주요 대상은 다음과 같다.
 
-The first screen should answer, within a few seconds:
-- Who is this person?
-- What role is he targeting?
-- What technical areas does he cover?
-- Which projects best prove those skills?
+- 포트폴리오를 짧은 시간 안에 검토하는 채용 담당자
+- 프로젝트의 기술적 깊이를 확인하려는 기술 면접관
 
-## Positioning
+첫 화면에서 몇 초 안에 아래 질문에 답할 수 있어야 한다.
 
-Primary position:
+- 이 사람은 누구인가?
+- 어떤 직무를 목표로 하는가?
+- 어떤 기술 분야를 다루는가?
+- 어떤 프로젝트가 그 역량을 가장 잘 보여주는가?
+
+## 포지셔닝
+
+메인 포지션:
+
 - `AI / Computer Vision Engineer`
 
-Supporting axes, in order:
-- `Backend / Server`
-- `Full-stack / Product`
-- `Blockchain / Security`
+보조 역량 순서:
 
-Core message:
-- Hyunwoo can connect data, models, APIs, and operational workflows into working systems, not only isolated experiments.
+1. `Backend / Server`
+2. `Full-stack / Product`
+3. `Blockchain / Security`
 
-Suggested Korean positioning copy:
+핵심 메시지:
+
+- 실험 코드에서 멈추지 않고, 데이터, 모델, API, 운영 흐름을 실제로 동작하는 시스템으로 연결할 수 있는 개발자.
+
+한국어 포지셔닝 문장 예시:
+
 - `AI / Computer Vision을 중심으로 데이터 파이프라인, 모델 학습, Backend API, 운영 흐름까지 연결하는 개발자입니다.`
 
-Suggested English positioning copy:
+영어 포지셔닝 문장 예시:
+
 - `AI / Computer Vision engineer who connects data pipelines, model training, backend APIs, and operational workflows into usable systems.`
 
-## Information Architecture
+## 정보 구조
 
-The homepage order is fixed:
+홈페이지 섹션 순서는 아래로 고정한다.
 
 1. `Hero`
 2. `About / Positioning`
@@ -49,7 +56,8 @@ The homepage order is fixed:
 6. `Publications / Awards`
 7. `Contact`
 
-Top navigation:
+상단 네비게이션에는 아래 항목을 둔다.
+
 - `About`
 - `Experience`
 - `Skills`
@@ -59,20 +67,24 @@ Top navigation:
 - `Blog`
 - `KO / EN`
 
-`Blog` is not a homepage section. It should open the Velog URL in a new tab.
+`Blog`는 홈페이지 안의 별도 섹션으로 만들지 않는다. 상단 네비게이션에서 Velog 링크를 새 탭으로 연다.
 
-Default language:
-- Korean.
+기본 언어:
 
-English mode:
-- Supported through a `KO / EN` language switch.
+- 한국어
 
-Theme:
-- Dark only. No light mode.
+영어 모드:
 
-## Page Model
+- `KO / EN` 토글로 지원한다.
 
-Use a static multi-page structure:
+테마:
+
+- 다크 모드만 제공한다.
+- 라이트 모드는 만들지 않는다.
+
+## 페이지 구성 방식
+
+정적 멀티 페이지 구조로 구현한다.
 
 - `index.html`
 - `projects/mediledger-equptrace.html`
@@ -81,88 +93,99 @@ Use a static multi-page structure:
 - `projects/jobfit-ai.html`
 - `assets/css/main.css`
 - `assets/js/main.js`
-- `assets/js/i18n.js` or equivalent static content module
+- `assets/js/i18n.js` 또는 같은 역할을 하는 정적 콘텐츠 모듈
 
-No frontend framework is required. The site should be easy to deploy as static files.
+React, Vite 같은 프레임워크는 사용하지 않는다. GitHub Pages 같은 정적 배포 환경에 쉽게 올릴 수 있어야 한다.
 
-## Homepage Sections
+## 홈페이지 섹션 상세
 
 ### Hero
 
-Purpose:
-- Create a fast recruiter-scan first impression.
+목적:
 
-Content:
-- Name: `최현우 / Hyunwoo Choi`
-- Role line centered on `AI / Computer Vision Engineer`
-- Short positioning sentence
-- Compact keyword row:
+- 채용 담당자가 빠르게 스캔할 수 있는 첫인상을 만든다.
+
+포함할 내용:
+
+- 이름: `최현우 / Hyunwoo Choi`
+- 역할 문장: `AI / Computer Vision Engineer`
+- 짧은 포지셔닝 문장
+- 핵심 키워드:
   - `Computer Vision`
   - `Backend`
   - `AI Product`
   - `Blockchain Integrity`
-- Primary links:
+- 주요 링크:
   - GitHub
   - Email
   - Blog
-- Featured project list or compact project index showing the four main projects in order.
+- 4개 대표 프로젝트를 순서대로 보여주는 compact project index
 
-Visual behavior:
-- Dark black canvas.
-- Large but not theatrical typography.
-- Thin dividers.
-- No decorative background orbs.
-- Subtle reveal on load.
+시각 방향:
+
+- 검은 캔버스
+- 크지만 과장되지 않은 타이포그래피
+- 얇은 구분선
+- 배경 장식, orb, gradient 장식 없음
+- 첫 진입 시 은은한 reveal 정도만 사용
 
 ### About / Positioning
 
-Purpose:
-- Explain what kind of problems Hyunwoo is strong at.
+목적:
 
-Tone:
-- Natural Korean with English technical terms where appropriate.
-- Avoid awkward translations of terms such as `AI`, `Computer Vision`, `Backend`, `Pipeline`, `Inference`, and `Integrity`.
+- 어떤 문제를 잘 푸는 개발자인지 짧고 명확하게 설명한다.
 
-Content focus:
-- Applied systems, not just experiments.
-- CV/AI experience supported by backend and product implementation.
-- Ability to make demo-ready or operation-ready workflows.
+문체:
+
+- 기본은 자연스러운 한국어
+- `AI`, `Computer Vision`, `Backend`, `Pipeline`, `Inference`, `Integrity` 같은 용어는 억지로 번역하지 않는다.
+- 영어가 더 자연스러운 기술명은 그대로 쓴다.
+
+내용 방향:
+
+- 단순 실험이 아니라 응용 시스템 구현 경험을 강조한다.
+- CV/AI 경험을 중심에 두고, Backend와 Product 구현 역량이 이를 받쳐주는 구조로 설명한다.
+- 데모 가능하거나 운영 흐름까지 고려한 결과물을 만들 수 있다는 점을 보여준다.
 
 ### Experience
 
-Order is fixed:
+순서는 아래로 고정한다.
 
 1. `SCH`
 2. `정보보호연구실`
 3. `DEEP.I`
 
-Experience should be chronological in feel, but each item may lead with the most relevant achievement.
+전체적으로 시간순 나열 느낌을 유지하되, 각 항목 안에서는 채용 관점에서 중요한 내용을 먼저 읽히게 정리한다.
 
-SCH:
-- Include university activities, bootcamp, idea league, tutoring, academic club, and attached PDF where relevant.
-- Link `papers/idea-league-slides.pdf` from the activity that references it.
+`SCH`:
 
-Information Security Lab:
-- Undergraduate researcher from `2025.03.26 - Present`.
-- Mention cryptography seminar, blockchain/DID/security seminars, paper review seminars, KUCIS and related club activities, competitions, and conference presentation.
+- 순천향대학교 활동, Wrtn 부트캠프, 로컬 창업동아리 아이디어 리그, 튜터링, 학술 동아리 Soft Brain을 포함한다.
+- 아이디어 리그 활동에서 `papers/idea-league-slides.pdf`를 링크한다.
 
-DEEP.I:
-- Do not include DEEP.I sub-projects as project cards.
-- Summarize it as practical Computer Vision and AI workflow experience.
-- Mention RTSP frame collection, augmentation, label correction, YOLO training/inference/evaluation, Azure OpenAI API use, COCO-to-YOLO segmentation preprocessing, MMDetection, YOLO segmentation, ByteTrack, BotSORT, ResNet18 classification, and Gradio/Docker where appropriate.
+`정보보호연구실`:
+
+- 기간: `2025.03.26 - 현재`
+- 학부 연구생 활동으로 표기한다.
+- 암호학 세미나, 블록체인/DID/포렌식/모의해킹 관련 기술 세미나, 논문 리뷰 세미나, KUCIS 활동, 대회 참가, 컨퍼런스 발표를 정리한다.
+
+`DEEP.I`:
+
+- DEEP.I의 세부 프로젝트를 프로젝트 카드로 만들지 않는다.
+- 경력 섹션에서 `Computer Vision 실무 경험`으로 녹인다.
+- RTSP 프레임 수집, 데이터 증강, 라벨 좌표 보정, YOLO 학습/추론/평가, Azure OpenAI API 활용, COCO-to-YOLO segmentation 전처리, MMDetection, YOLO Segmentation, ByteTrack, BotSORT, ResNet18 기반 분류, Gradio/Docker 경험을 압축해서 보여준다.
 
 ### Skills
 
-Keep this section compact. Do not use large cards that consume too much vertical space.
+공간을 많이 차지하지 않게 compact list 형태로 만든다. 큰 카드형 UI로 섹션을 부풀리지 않는다.
 
-Group skills by domain:
+분야별로 나눈다.
 
 - `AI / Computer Vision`
   - PyTorch, OpenCV, YOLO, MMDetection, ByteTrack, BotSORT, ResNet18
 - `Backend / Database`
-  - FastAPI, PostgreSQL, Redis, psycopg, SQLAlchemy where applicable
+  - FastAPI, PostgreSQL, Redis, psycopg, SQLAlchemy
 - `Blockchain / Security`
-  - Hyperledger Besu, Solidity, QBFT, integrity verification
+  - Hyperledger Besu, Solidity, QBFT, Integrity Verification
 - `Frontend / Product`
   - React, Vite, Next.js, TypeScript, Tailwind CSS, Streamlit, Gradio
 - `Infra / Tools`
@@ -172,61 +195,67 @@ Group skills by domain:
 
 ### Projects
 
-Show exactly four main project cards, in this order:
+메인 프로젝트 카드는 정확히 4개만 보여준다. 순서는 아래로 고정한다.
 
 1. `Mediledger & EqupTrace`
 2. `KoELECTRA 기반 한국어 혐오 표현 탐지 시스템`
 3. `분산 자판기 관리 시스템`
 4. `JobFit AI`
 
-Each project card includes:
-- Status: `Completed` or `In Progress`
-- Short summary
-- Key stack
-- `자세히 보기` button
-- `GitHub` button
+각 프로젝트 카드에는 아래 요소를 넣는다.
 
-Project status:
+- 상태: `Completed` 또는 `In Progress`
+- 짧은 요약
+- 핵심 기술 스택
+- `자세히 보기` 버튼
+- `GitHub` 버튼
+
+프로젝트 상태:
+
 - `Mediledger & EqupTrace`: `In Progress`
 - `KoELECTRA 기반 한국어 혐오 표현 탐지 시스템`: `Completed`
 - `분산 자판기 관리 시스템`: `Completed`
 - `JobFit AI`: `Completed`
 
-Project detail behavior:
-- Use dedicated case study pages.
-- The homepage remains scan-friendly.
-- Detail pages can grow over time with media, architecture, stack, and review sections.
+프로젝트 상세 보기 방식:
+
+- 각 프로젝트마다 별도 case study 페이지를 만든다.
+- 홈에서는 요약 중심으로 빠르게 스캔 가능하게 유지한다.
+- 상세 페이지는 나중에 gif, 이미지, 아키텍처, 기술 스택, 회고를 추가할 수 있게 확장 가능한 구조로 만든다.
 
 ### Publications / Awards
 
-Combine publications and awards into one section, but keep the visual grouping clear.
+논문과 수상은 하나의 섹션에 함께 두되, 시각적으로 그룹은 구분한다.
 
-Include:
+포함할 항목:
+
 - `2025년 한국데이터사이언스학회 동계종합학술대회 우수 논문상`
 - `사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구`
 - `2026 한국정보보호학회 하계학술대회(CISC-S'26): 블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계`
 - `컴퓨터소프트웨어공학과 2025 BLEP 데이터 활용 경진 대회 최우수상`
 - `2025년도 대학정보보호동아리(KUCIS) 우수동아리`
 
-PDF links:
-- Link the hate speech paper PDF from `papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf`.
-- Link the blockchain medical equipment paper PDF from `papers/블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계.pdf`.
+PDF 링크:
+
+- 혐오 표현 논문은 `papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf`로 연결한다.
+- 의료 장비 블록체인 논문은 `papers/블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계.pdf`로 연결한다.
 
 ### Contact
 
-Include:
+포함할 항목:
+
 - Email: `ihyonoo0520@gmail.com`
 - GitHub: `https://github.com/ihyonoo`
 - Blog: `https://velog.io/@hyun_woo/posts`
 - Phone: `010-5083-1298`
 
-Use `mailto:` and external links where appropriate.
+Email은 `mailto:` 링크를 사용하고, GitHub와 Blog는 새 탭으로 연다.
 
-## Project Detail Pages
+## 프로젝트 상세 페이지
 
-Each project detail page should be present from the first implementation, even if some content is placeholder.
+각 프로젝트 상세 페이지는 첫 구현부터 모두 만든다. 일부 내용은 지금 당장 완성하지 않아도 되며, 비어 있는 영역은 명확한 placeholder로 둔다.
 
-Shared detail structure:
+공통 구조:
 
 1. Intro / media placeholder
 2. Problem
@@ -236,81 +265,96 @@ Shared detail structure:
 6. What I Learned / Review
 7. GitHub link
 
-Placeholder policy:
-- Use clear placeholder panels for future gif/image media.
-- Do not pretend missing architecture or review content is final.
-- Short placeholder text is acceptable for now, because the user plans to fill these later.
+placeholder 정책:
 
-## Visual Style
+- 나중에 gif나 이미지를 넣을 수 있도록 고정 비율 media 영역을 둔다.
+- 아직 작성하지 않은 아키텍처나 회고를 완성된 내용처럼 꾸미지 않는다.
+- 사용자가 나중에 채울 예정인 부분은 짧고 명확한 placeholder 문구로 처리한다.
 
-Reference:
-- `DESIGN.md`, Bugatti-inspired design.
+## 시각 스타일
 
-Adaptation rules:
-- Use near-black canvas.
-- Use white and gray text as the primary palette.
-- Use a rare cold light-blue only for links or focus accents.
-- Use no decorative orbs, gradients, bokeh, or glassmorphism.
-- Use hairline borders and dividers.
-- Use rectangular cards and media areas with `0px` radius.
-- Use pill buttons only for actions.
-- Use uppercase monospace captions for metadata.
-- Use generous spacing, but keep the site denser than the Bugatti reference because this is a recruiter-facing portfolio.
-- Keep Korean body text readable; do not apply heavy letter-spacing to Korean paragraphs.
+참고 기준:
 
-Suggested font substitutes:
-- Display/headings: `Saira Condensed` or a restrained sans fallback.
-- Body Korean: `Noto Sans KR` or system sans.
-- Metadata/buttons: `JetBrains Mono`, `IBM Plex Mono`, or `ui-monospace`.
+- `DESIGN.md`의 Bugatti-inspired 디자인
 
-## Interaction
+적용 방식:
 
-Homepage:
-- Smooth nav scroll to sections.
-- Subtle scroll reveal.
-- Language switch: `KO / EN`.
-- Project card hover: slight line or brightness change only.
-- Buttons and links should be keyboard-focusable.
+- 거의 검은색에 가까운 배경을 사용한다.
+- 흰색과 회색 텍스트를 중심으로 한다.
+- 링크나 focus accent에만 차가운 연한 블루를 제한적으로 사용한다.
+- orb, gradient 장식, bokeh, glassmorphism은 사용하지 않는다.
+- 얇은 border와 divider를 사용한다.
+- 카드와 media 영역은 직각으로 둔다.
+- 버튼만 pill 형태를 허용한다.
+- metadata는 uppercase monospace caption 스타일을 사용한다.
+- Bugatti 레퍼런스처럼 여백을 충분히 쓰되, 취업용 포트폴리오라서 정보 밀도는 더 높게 유지한다.
+- 한국어 본문에는 과한 letter-spacing을 주지 않는다.
 
-Mobile:
-- Compact navigation menu.
-- Keep touch targets at least 44px where practical.
-- Prevent text overlap in nav, project cards, and buttons.
+폰트 방향:
 
-Project detail pages:
-- Use stable aspect-ratio media placeholders.
-- Keep the page readable before final images/gifs are added.
+- Display/headings: `Saira Condensed` 또는 절제된 sans fallback
+- 한국어 본문: `Noto Sans KR` 또는 system sans
+- Metadata/buttons: `JetBrains Mono`, `IBM Plex Mono`, `ui-monospace`
 
-## Content Rules
+## 인터랙션
 
-Korean mode:
-- Default.
-- Use Korean naturally.
-- Keep technical English terms where they read better than forced Korean.
+홈페이지:
 
-English mode:
-- Support for all visible homepage and detail-page copy.
-- English copy can be concise and professional rather than literal translation.
+- 상단 nav 클릭 시 부드럽게 해당 섹션으로 이동한다.
+- 스크롤 reveal은 은은하게만 적용한다.
+- 언어 전환은 `KO / EN`으로 제공한다.
+- 프로젝트 카드 hover는 아주 약한 line/brightness 변화만 준다.
+- 버튼과 링크는 키보드 focus가 가능해야 한다.
 
-No dark/light toggle:
-- Dark mode only.
+모바일:
 
-## Implementation Boundaries
+- 상단 nav는 compact menu로 접는다.
+- 터치 영역은 가능한 한 44px 이상으로 유지한다.
+- nav, 프로젝트 카드, 버튼 안에서 텍스트가 겹치거나 넘치지 않게 한다.
 
-The user already removed the previous site files. Implementation should create the new static site from scratch.
+프로젝트 상세 페이지:
 
-Preserve source/reference materials:
+- media placeholder는 안정적인 aspect-ratio를 가진다.
+- 최종 이미지나 gif가 없어도 페이지가 어색하게 비어 보이지 않아야 한다.
+
+## 콘텐츠 작성 규칙
+
+한국어 모드:
+
+- 기본 언어다.
+- 자연스러운 한국어를 사용한다.
+- 기술 용어는 필요한 경우 영어로 둔다.
+
+영어 모드:
+
+- 홈페이지와 상세 페이지의 모든 주요 텍스트를 지원한다.
+- 한국어를 직역하기보다 간결하고 전문적인 영어 문장으로 작성한다.
+
+테마:
+
+- 다크 모드만 제공한다.
+- 다크/라이트 전환 기능은 만들지 않는다.
+
+## 구현 범위
+
+사용자가 기존 사이트 파일은 이미 삭제했다. 구현 단계에서는 현재 상태를 기준으로 새 정적 사이트를 처음부터 만든다.
+
+유지해야 하는 원천 자료:
+
 - `docs/`
 - `papers/`
 - `DESIGN.md`
 
-Do not commit brainstorming companion files under `.superpowers/`.
+커밋하지 말아야 할 파일:
 
-## Open Decisions For Implementation
+- `.superpowers/` 아래의 brainstorming companion 파일
 
-These can be decided conservatively during implementation:
-- Exact GitHub URLs for each project if not present in docs. Use placeholder `GitHub` buttons only if links are unknown, or disable/hide them with clear temporary handling.
-- Exact English wording for each project detail page.
-- Final project images or gifs. Use placeholders now.
+## 구현 단계에서 보수적으로 결정해도 되는 것
 
-No further design decision is needed before writing an implementation plan.
+아래 항목은 구현 중 확인되는 자료에 맞춰 보수적으로 결정한다.
+
+- 각 프로젝트의 정확한 GitHub URL이 docs에 없으면, 해당 버튼은 임시 비활성화하거나 명확한 placeholder 처리로 둔다.
+- 프로젝트 상세 페이지의 영어 문구는 직역하지 않고 자연스럽게 정리한다.
+- 최종 프로젝트 이미지나 gif는 아직 없으므로 placeholder로 둔다.
+
+이 스펙 기준으로 구현 계획을 작성하면 된다.
