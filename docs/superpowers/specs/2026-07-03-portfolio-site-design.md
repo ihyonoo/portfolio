@@ -2,7 +2,7 @@
 
 ## 목표
 
-최현우의 취업 준비용 포트폴리오 사이트를 만든다. 메인 포지션은 `AI / Computer Vision Engineer`로 잡고, 이를 `Backend / Server`, `Full-stack / Product`, `Blockchain / Security` 경험이 받쳐주는 구조로 보여준다.
+최현우의 취업 준비용 포트폴리오 사이트를 만든다. 특정 분야 하나를 과하게 메인 포지션으로 고정하지 않고, 사용자가 선호하는 관심 분야 순서인 `AI / Computer Vision`, `Backend / Server`, `Full-stack / Product`, `Blockchain / Security`를 균형 있게 보여준다.
 
 사이트는 채용 담당자가 빠르게 훑어도 핵심이 들어오고, 기술 면접관이 나중에 프로젝트 상세를 눌러 깊이를 확인할 수 있어야 한다. `DESIGN.md`의 Bugatti-inspired 디자인을 참고하되, 고급 자동차 랜딩 페이지처럼 과하게 감성적으로 만들지 않는다. 검은 캔버스, 정제된 타이포그래피, 얇은 라인, 넉넉한 여백, 절제된 인터랙션만 가져온다.
 
@@ -16,33 +16,32 @@
 첫 화면에서 몇 초 안에 아래 질문에 답할 수 있어야 한다.
 
 - 이 사람은 누구인가?
-- 어떤 직무를 목표로 하는가?
+- 어떤 분야와 문제 유형에 관심이 있는가?
 - 어떤 기술 분야를 다루는가?
 - 어떤 프로젝트가 그 역량을 가장 잘 보여주는가?
 
 ## 포지셔닝
 
-메인 포지션:
+관심 분야 우선순위:
 
-- `AI / Computer Vision Engineer`
-
-보조 역량 순서:
-
-1. `Backend / Server`
-2. `Full-stack / Product`
-3. `Blockchain / Security`
+1. `AI / Computer Vision`
+2. `Backend / Server`
+3. `Full-stack / Product`
+4. `Blockchain / Security`
 
 핵심 메시지:
 
 - 실험 코드에서 멈추지 않고, 데이터, 모델, API, 운영 흐름을 실제로 동작하는 시스템으로 연결할 수 있는 개발자.
+- `AI / Computer Vision`에 관심이 가장 크지만, 이를 특출난 단일 전문 분야처럼 과장하지 않는다.
+- 포트폴리오 전체는 여러 프로젝트를 통해 응용 시스템 구현 역량을 보여주는 방향으로 잡는다.
 
 한국어 포지셔닝 문장 예시:
 
-- `AI / Computer Vision을 중심으로 데이터 파이프라인, 모델 학습, Backend API, 운영 흐름까지 연결하는 개발자입니다.`
+- `AI / Computer Vision, Backend, Full-stack 프로젝트를 통해 데이터와 모델, API, 사용자 흐름을 실제로 동작하는 형태로 연결해 왔습니다.`
 
 영어 포지셔닝 문장 예시:
 
-- `AI / Computer Vision engineer who connects data pipelines, model training, backend APIs, and operational workflows into usable systems.`
+- `Developer interested in AI / Computer Vision, backend systems, and product workflows that connect data, models, APIs, and users.`
 
 ## 정보 구조
 
@@ -108,17 +107,13 @@ React, Vite 같은 프레임워크는 사용하지 않는다. GitHub Pages 같�
 포함할 내용:
 
 - 이름: `최현우 / Hyunwoo Choi`
-- 역할 문장: `AI / Computer Vision Engineer`
+- 역할 문장: `AI / Computer Vision · Backend · Full-stack`
 - 짧은 포지셔닝 문장
 - 핵심 키워드:
   - `Computer Vision`
   - `Backend`
   - `AI Product`
   - `Blockchain Integrity`
-- 주요 링크:
-  - GitHub
-  - Email
-  - Blog
 - 4개 대표 프로젝트를 순서대로 보여주는 compact project index
 
 시각 방향:
@@ -144,7 +139,7 @@ React, Vite 같은 프레임워크는 사용하지 않는다. GitHub Pages 같�
 내용 방향:
 
 - 단순 실험이 아니라 응용 시스템 구현 경험을 강조한다.
-- CV/AI 경험을 중심에 두고, Backend와 Product 구현 역량이 이를 받쳐주는 구조로 설명한다.
+- `AI / Computer Vision`을 선호 분야 중 하나로 보여주되, 전체 문맥은 Backend와 Product 구현까지 포함한 균형 잡힌 개발 경험으로 설명한다.
 - 데모 가능하거나 운영 흐름까지 고려한 결과물을 만들 수 있다는 점을 보여준다.
 
 ### Experience
