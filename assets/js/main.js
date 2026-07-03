@@ -120,6 +120,10 @@
     if (status === "In Progress") {
       element.classList.add("is-progress");
     }
+
+    if (status === "Completed") {
+      element.classList.add("is-completed");
+    }
   }
 
   function appendTags(parent, tags) {
@@ -228,7 +232,18 @@
       const bullets = document.createElement("ul");
       entry.bullets.forEach(function (bullet) {
         const item = document.createElement("li");
-        item.textContent = bullet;
+
+        if (typeof bullet === "string") {
+          item.textContent = bullet;
+        } else {
+          const anchor = document.createElement("a");
+          anchor.className = "text-link";
+          anchor.href = bullet.url;
+          anchor.textContent = bullet.text;
+          applySafeExternal(anchor, bullet.url);
+          item.appendChild(anchor);
+        }
+
         bullets.appendChild(item);
       });
 
@@ -309,7 +324,7 @@
       actions.className = "card-actions";
       actions.append(
         createButton(currentLang === "ko" ? "자세히 보기" : "View Details", project.detailUrl, "button"),
-        createButton("GitHub", project.githubUrl, "button secondary")
+        createButton("GitHub", project.githubUrl, "button")
       );
 
       header.append(number, status);
@@ -339,24 +354,20 @@
     locale()[renderName].forEach(function (item) {
       const article = document.createElement("article");
 
-      const itemTitle = document.createElement("p");
-      itemTitle.className = "card-copy";
+      const itemTitle = document.createElement(item.url ? "a" : "p");
+      itemTitle.className = item.url ? "publication-link" : "card-copy";
       itemTitle.textContent = item.title;
+
+      if (item.url) {
+        itemTitle.href = item.url;
+        applySafeExternal(itemTitle, item.url);
+      }
 
       const meta = document.createElement("p");
       meta.className = "timeline-meta";
       meta.textContent = item.meta;
 
       article.append(itemTitle, meta);
-
-      if (item.url) {
-        const anchor = document.createElement("a");
-        anchor.className = "text-link";
-        anchor.href = item.url;
-        anchor.textContent = "PDF";
-        applySafeExternal(anchor, item.url);
-        article.appendChild(anchor);
-      }
 
       panel.appendChild(article);
     });
@@ -417,7 +428,7 @@
       return;
     }
 
-    document.title = titleWithSiteName(detail.title);
+    document.title = titleWithSiteName(detail.title.replace(/\s+/g, " "));
 
     const hero = document.createElement("section");
     hero.className = "detail-hero reveal";
@@ -438,7 +449,14 @@
     summary.className = "detail-copy";
     summary.textContent = detail.summary;
 
-    copy.append(status, title, summary);
+    const actions = document.createElement("div");
+    actions.className = "card-actions detail-actions";
+    actions.append(
+      createButton(currentLang === "ko" ? "프로젝트로 돌아가기" : "Back to Projects", "../index.html#projects", "button"),
+      createButton("GitHub", detail.githubUrl, "button")
+    );
+
+    copy.append(actions, status, title, summary);
     appendTags(copy, detail.tags);
 
     const media = document.createElement("div");
@@ -463,19 +481,6 @@
       article.append(heading, body);
       target.appendChild(article);
     });
-
-    const actionsSection = document.createElement("section");
-    actionsSection.className = "section-inner reveal";
-
-    const actions = document.createElement("div");
-    actions.className = "card-actions";
-    actions.append(
-      createButton(currentLang === "ko" ? "프로젝트로 돌아가기" : "Back to Projects", "../index.html#projects", "button"),
-      createButton("GitHub", detail.githubUrl, "button secondary")
-    );
-
-    actionsSection.appendChild(actions);
-    target.appendChild(actionsSection);
   }
 
   function setupLanguageButtons() {
@@ -574,8 +579,8 @@
       renderExperience();
       renderSkills();
       renderProjects();
-      renderListPanel("publications", "Publications");
-      renderListPanel("awards", "Awards");
+      renderListPanel("awards", locale().sections.awardsTitle);
+      renderListPanel("publications", locale().sections.publicationsTitle);
       renderContact();
     }
 

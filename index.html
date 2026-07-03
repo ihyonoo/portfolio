@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="최현우 포트폴리오 - AI, Computer Vision, Backend, Full-stack, Blockchain 프로젝트와 경력"
+      content="최현우 포트폴리오 - AI, Computer Vision, Backend 프로젝트와 경력"
     />
     <title>최현우 | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,8 +29,10 @@
           <a href="#experience" data-i18n="nav.experience">Experience</a>
           <a href="#skills" data-i18n="nav.skills">Skills</a>
           <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#awards" data-i18n="nav.awards">Awards</a>
           <a href="#publications" data-i18n="nav.publications">Publications</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <a href="https://github.com/ihyonoo" target="_blank" rel="noreferrer">GitHub</a>
           <a href="https://velog.io/@hyun_woo/posts" target="_blank" rel="noreferrer">Blog</a>
         </nav>
         <div class="language-switch" role="group" aria-label="Language">
@@ -42,17 +44,16 @@
 
     <main id="main">
       <section class="hero section-panel reveal" id="hero">
-        <div class="section-inner hero-grid">
-          <div>
+        <div class="section-inner hero-home">
+          <div class="hero-copy-block">
             <p class="eyebrow" data-i18n="hero.eyebrow">PORTFOLIO</p>
-            <h1 data-i18n="hero.title">최현우 / Hyunwoo Choi</h1>
-            <p class="hero-role" data-i18n="hero.role">AI / Computer Vision · Backend · Full-stack</p>
+            <h1 data-i18n="hero.title">최현우</h1>
+            <p class="hero-role" data-i18n="hero.role">AI / Computer Vision · Backend</p>
             <p class="hero-copy" data-i18n="hero.copy">
-              AI / Computer Vision, Backend, Full-stack 프로젝트를 통해 데이터와 모델, API, 사용자 흐름을 실제로 동작하는 형태로 연결해 왔습니다.
+              AI / Computer Vision과 Backend 프로젝트를 통해 데이터와 모델, API 흐름을 실제로 동작하는 형태로 연결해 왔습니다.
             </p>
             <ul class="keyword-row" data-render="heroKeywords"></ul>
           </div>
-          <nav class="project-index" data-render="heroProjects" aria-label="Featured projects"></nav>
         </div>
       </section>
 
@@ -96,16 +97,23 @@
         </div>
       </section>
 
+      <section class="section-panel reveal" id="awards">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="sections.awardsEyebrow">AWARDS</p>
+            <h2 data-i18n="sections.awardsTitle">Awards</h2>
+          </div>
+          <div data-render="awards"></div>
+        </div>
+      </section>
+
       <section class="section-panel reveal" id="publications">
         <div class="section-inner">
           <div class="section-heading">
-            <p class="eyebrow" data-i18n="sections.publicationsEyebrow">PUBLICATIONS / AWARDS</p>
-            <h2 data-i18n="sections.publicationsTitle">Publications / Awards</h2>
+            <p class="eyebrow" data-i18n="sections.publicationsEyebrow">PUBLICATIONS</p>
+            <h2 data-i18n="sections.publicationsTitle">Publications</h2>
           </div>
-          <div class="split-lists">
-            <div data-render="publications"></div>
-            <div data-render="awards"></div>
-          </div>
+          <div data-render="publications"></div>
         </div>
       </section>
 
