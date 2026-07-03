@@ -50,7 +50,10 @@ const ko = {
       bullets: [
         "컴퓨터소프트웨어공학과 4학년 재학",
         "2026 Wrtn 순천향대학교 부트캠프 참가",
-        "2026 로컬 창업동아리 아이디어 리그 경진대회 참가",
+        {
+          text: "2026 로컬 창업동아리 아이디어 리그 경진대회 참가",
+          url: "papers/idea-league-slides.pdf"
+        },
         "다수 튜터링 프로그램 튜터 활동",
         "학술 동아리 Soft Brain 활동"
       ],
@@ -164,11 +167,13 @@ const ko = {
   publications: [
     {
       title: "사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구",
-      meta: "한국데이터사이언스학회 동계종합학술대회 · 우수 논문상 · 2025"
+      meta: "한국데이터사이언스학회 동계종합학술대회 · 우수 논문상 · 2025",
+      url: "papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf"
     },
     {
       title: "블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계",
-      meta: "한국정보보호학회 하계학술대회 CISC-S'26 · 2026"
+      meta: "한국정보보호학회 하계학술대회 CISC-S'26 · 2026",
+      url: "papers/블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계.pdf"
     }
   ],
   awards: [
@@ -397,7 +402,10 @@ const en = {
       bullets: [
         "Senior student in Computer Software Engineering",
         "Participated in the 2026 Wrtn Soonchunhyang University bootcamp",
-        "Participated in the 2026 Local Startup Club Idea League competition",
+        {
+          text: "Participated in the 2026 Local Startup Club Idea League competition",
+          url: "papers/idea-league-slides.pdf"
+        },
         "Worked as a tutor in multiple tutoring programs",
         "Participated in the Soft Brain academic club"
       ],
@@ -512,11 +520,13 @@ const en = {
   publications: [
     {
       title: "A Study Proposing an Automatic Hate Speech Filtering System Based on Pre-trained Language Models",
-      meta: "Korean Data Science Society Winter Conference · Excellent Paper Award · 2025"
+      meta: "Korean Data Science Society Winter Conference · Excellent Paper Award · 2025",
+      url: "papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf"
     },
     {
       title: "Design of a Blockchain-Based Medical Equipment Usage History Management System",
-      meta: "Korea Institute of Information Security and Cryptology Summer Conference CISC-S'26 · 2026"
+      meta: "Korea Institute of Information Security and Cryptology Summer Conference CISC-S'26 · 2026",
+      url: "papers/블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계.pdf"
     }
   ],
   awards: [
