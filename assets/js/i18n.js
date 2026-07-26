@@ -193,8 +193,8 @@ const ko = {
   contact: [
     {
       label: "Email",
-      value: "ihyonoo0520@gmail.com",
-      url: "mailto:ihyonoo0520@gmail.com"
+      value: "hyunu.choe@gmail.com",
+      url: "mailto:hyunu.choe@gmail.com"
     },
     {
       label: "Phone",
@@ -546,8 +546,8 @@ const en = {
   contact: [
     {
       label: "Email",
-      value: "ihyonoo0520@gmail.com",
-      url: "mailto:ihyonoo0520@gmail.com"
+      value: "hyunu.choe@gmail.com",
+      url: "mailto:hyunu.choe@gmail.com"
     },
     {
       label: "Phone",
