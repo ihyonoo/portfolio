@@ -125,6 +125,16 @@ const ko = {
   ],
   projects: [
     {
+      id: "visionops",
+      title: "VisionOps",
+      status: "In Progress",
+      summary:
+        "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
+      stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
+      detailUrl: "projects/visionops.html",
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
+    {
       id: "mediledger",
       title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
@@ -142,26 +152,6 @@ const ko = {
       stack: "Python/PyTorch/Transformers/KoELECTRA/Streamlit",
       detailUrl: "projects/hate-speech-detection.html",
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
-    },
-    {
-      id: "vendingMachine",
-      title: "분산 자판기 관리 시스템",
-      status: "Completed",
-      summary:
-        "TCP/IP 소켓 프로토콜, ACK 이벤트 처리, 서버 복제와 장애 대응을 포함한 Python 기반 운영 시스템.",
-      stack: "Python/socket/PostgreSQL/Flask/tkinter",
-      detailUrl: "projects/vending-machine.html",
-      githubUrl: "https://github.com/ihyonoo/vending-machine-simulator"
-    },
-    {
-      id: "jobfit",
-      title: "JobFit AI",
-      status: "Completed",
-      summary:
-        "포트폴리오 분석, 채용공고 추천, 이력서 생성, 면접 시뮬레이션을 연결한 AI 채용 매칭 플랫폼.",
-      stack: "Next.js/FastAPI/PostgreSQL/LLM API/Docker",
-      detailUrl: "projects/jobfit-ai.html",
-      githubUrl: "https://github.com/ihyonoo/ai-job-matching-system"
     }
   ],
   publications: [
@@ -203,6 +193,42 @@ const ko = {
     }
   ],
   projectDetails: {
+    visionops: {
+      title: "VisionOps",
+      status: "In Progress",
+      summary:
+        "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
+      mediaLabel: "Computer Vision · MLOps Platform",
+      tags: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "Detection", "Segmentation", "Classification", "Pose Estimation"],
+      sections: [
+        {
+          title: "Problem",
+          body:
+            ""
+        },
+        {
+          title: "My Role",
+          body:
+            ""
+        },
+        {
+          title: "Architecture",
+          body:
+            ""
+        },
+        {
+          title: "Tech Stack",
+          body:
+            ""
+        },
+        {
+          title: "What I Learned / Review",
+          body:
+            ""
+        }
+      ],
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
     mediledger: {
       title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
@@ -273,78 +299,6 @@ const ko = {
         }
       ],
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
-    },
-    vendingMachine: {
-      title: "분산 자판기 관리 시스템",
-      status: "Completed",
-      summary:
-        "TCP/IP 소켓 프로토콜, ACK 이벤트 처리, 서버 복제와 장애 대응을 포함한 Python 기반 운영 시스템.",
-      mediaLabel: "Distributed System · Socket Protocol",
-      tags: ["Python", "socket", "PostgreSQL", "Flask", "tkinter", "Replication", "Failover"],
-      sections: [
-        {
-          title: "Problem",
-          body:
-            ""
-        },
-        {
-          title: "My Role",
-          body:
-            ""
-        },
-        {
-          title: "Architecture",
-          body:
-            ""
-        },
-        {
-          title: "Tech Stack",
-          body:
-            ""
-        },
-        {
-          title: "What I Learned / Review",
-          body:
-            ""
-        }
-      ],
-      githubUrl: "https://github.com/ihyonoo/vending-machine-simulator"
-    },
-    jobfit: {
-      title: "JobFit AI",
-      status: "Completed",
-      summary:
-        "포트폴리오 분석, 채용공고 추천, 이력서 생성, 면접 시뮬레이션을 연결한 AI 채용 매칭 플랫폼.",
-      mediaLabel: "AI Hiring Platform · Backend Product",
-      tags: ["Next.js", "FastAPI", "PostgreSQL", "LLM API", "Docker", "Tailwind CSS"],
-      sections: [
-        {
-          title: "Problem",
-          body:
-            ""
-        },
-        {
-          title: "My Role",
-          body:
-            ""
-        },
-        {
-          title: "Architecture",
-          body:
-            ""
-        },
-        {
-          title: "Tech Stack",
-          body:
-            ""
-        },
-        {
-          title: "What I Learned / Review",
-          body:
-            ""
-        }
-      ],
-      githubUrl: "https://github.com/ihyonoo/ai-job-matching-system"
     }
   }
 };
@@ -477,6 +431,16 @@ const en = {
   ],
   projects: [
     {
+      id: "visionops",
+      title: "VisionOps",
+      status: "In Progress",
+      summary:
+        "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
+      stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
+      detailUrl: "projects/visionops.html",
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
+    {
       id: "mediledger",
       title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
@@ -495,26 +459,6 @@ const en = {
       stack: "Python/PyTorch/Transformers/KoELECTRA/Streamlit",
       detailUrl: "projects/hate-speech-detection.html",
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
-    },
-    {
-      id: "vendingMachine",
-      title: "Distributed Vending Machine Management System",
-      status: "Completed",
-      summary:
-        "A Python operations system with a TCP/IP socket protocol, ACK event handling, server replication, and failure recovery.",
-      stack: "Python/socket/PostgreSQL/Flask/tkinter",
-      detailUrl: "projects/vending-machine.html",
-      githubUrl: "https://github.com/ihyonoo/vending-machine-simulator"
-    },
-    {
-      id: "jobfit",
-      title: "JobFit AI",
-      status: "Completed",
-      summary:
-        "An AI hiring-matching platform that connects portfolio analysis, job recommendations, resume generation, and interview simulation.",
-      stack: "Next.js/FastAPI/PostgreSQL/LLM API/Docker",
-      detailUrl: "projects/jobfit-ai.html",
-      githubUrl: "https://github.com/ihyonoo/ai-job-matching-system"
     }
   ],
   publications: [
@@ -556,6 +500,42 @@ const en = {
     }
   ],
   projectDetails: {
+    visionops: {
+      title: "VisionOps",
+      status: "In Progress",
+      summary:
+        "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
+      mediaLabel: "Computer Vision · MLOps Platform",
+      tags: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "Detection", "Segmentation", "Classification", "Pose Estimation"],
+      sections: [
+        {
+          title: "Problem",
+          body:
+            ""
+        },
+        {
+          title: "My Role",
+          body:
+            ""
+        },
+        {
+          title: "Architecture",
+          body:
+            ""
+        },
+        {
+          title: "Tech Stack",
+          body:
+            ""
+        },
+        {
+          title: "What I Learned / Review",
+          body:
+            ""
+        }
+      ],
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
     mediledger: {
       title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
@@ -627,78 +607,6 @@ const en = {
         }
       ],
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
-    },
-    vendingMachine: {
-      title: "Distributed Vending Machine Management System",
-      status: "Completed",
-      summary:
-        "A Python operations system with a TCP/IP socket protocol, ACK event handling, server replication, and failure recovery.",
-      mediaLabel: "Distributed System · Socket Protocol",
-      tags: ["Python", "socket", "PostgreSQL", "Flask", "tkinter", "Replication", "Failover"],
-      sections: [
-        {
-          title: "Problem",
-          body:
-            ""
-        },
-        {
-          title: "My Role",
-          body:
-            ""
-        },
-        {
-          title: "Architecture",
-          body:
-            ""
-        },
-        {
-          title: "Tech Stack",
-          body:
-            ""
-        },
-        {
-          title: "What I Learned / Review",
-          body:
-            ""
-        }
-      ],
-      githubUrl: "https://github.com/ihyonoo/vending-machine-simulator"
-    },
-    jobfit: {
-      title: "JobFit AI",
-      status: "Completed",
-      summary:
-        "An AI hiring-matching platform that connects portfolio analysis, job recommendations, resume generation, and interview simulation.",
-      mediaLabel: "AI Hiring Platform · Backend Product",
-      tags: ["Next.js", "FastAPI", "PostgreSQL", "LLM API", "Docker", "Tailwind CSS"],
-      sections: [
-        {
-          title: "Problem",
-          body:
-            ""
-        },
-        {
-          title: "My Role",
-          body:
-            ""
-        },
-        {
-          title: "Architecture",
-          body:
-            ""
-        },
-        {
-          title: "Tech Stack",
-          body:
-            ""
-        },
-        {
-          title: "What I Learned / Review",
-          body:
-            ""
-        }
-      ],
-      githubUrl: "https://github.com/ihyonoo/ai-job-matching-system"
     }
   }
 };
