@@ -3,3 +3,7 @@
 
 # Personal documents (not published)
 resume/
+
+# Local-only dev docs
+CLAUDE.md
+docs/
