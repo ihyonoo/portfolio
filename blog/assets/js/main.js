@@ -169,22 +169,6 @@
     return anchor;
   }
 
-  function renderHeroKeywords() {
-    const target = document.querySelector('[data-render="heroKeywords"]');
-
-    if (!target) {
-      return;
-    }
-
-    target.replaceChildren();
-
-    locale().heroKeywords.forEach(function (keyword) {
-      const item = document.createElement("li");
-      item.textContent = keyword;
-      target.appendChild(item);
-    });
-  }
-
   function renderHeroProjects() {
     const target = document.querySelector('[data-render="heroProjects"]');
 
@@ -604,7 +588,6 @@
     if (page === "project") {
       renderProjectDetail();
     } else {
-      renderHeroKeywords();
       renderHeroProjects();
       renderExperience();
       renderSkills();

@@ -6,52 +6,33 @@ const ko = {
     footer: "© 2026 최현우. All rights reserved."
   },
   nav: {
+    about: "소개",
     experience: "경력",
-    skills: "기술",
+    skills: "주요 기술",
     projects: "프로젝트",
     awards: "수상",
-    publications: "논문",
-    contact: "연락처"
+    publications: "논문"
   },
   hero: {
     eyebrow: "PORTFOLIO",
     title: "최현우",
-    role: "AI / Computer Vision · Backend",
+    role: "AI · Computer Vision · Backend",
     copy:
       "AI / Computer Vision과 Backend 프로젝트를 통해 데이터와 모델, API 흐름을 실제로 동작하는 형태로 연결해 왔습니다."
   },
-  heroKeywords: ["AI", "Computer Vision", "Backend"],
   sections: {
     experienceEyebrow: "EXPERIENCE",
     experienceTitle: "경력",
     skillsEyebrow: "SKILLS",
-    skillsTitle: "기술",
+    skillsTitle: "주요 기술",
     projectsEyebrow: "PROJECTS",
     projectsTitle: "프로젝트",
     publicationsEyebrow: "PUBLICATIONS",
     publicationsTitle: "논문",
     awardsEyebrow: "AWARDS",
-    awardsTitle: "수상",
-    contactEyebrow: "CONTACT",
-    contactTitle: "연락처"
+    awardsTitle: "수상"
   },
   experience: [
-    {
-      organization: "순천향대학교",
-      role: "Dept. of Computer Software Engineering",
-      period: "2021.03 - 현재",
-      bullets: [
-        "컴퓨터소프트웨어공학과 4학년 재학",
-        "2026 Wrtn 순천향대학교 부트캠프 참가",
-        {
-          text: "2026 로컬 창업동아리 아이디어 리그 경진대회 참가",
-          url: "papers/idea-league-slides.pdf"
-        },
-        "다수 튜터링 프로그램 튜터 활동",
-        "학술 동아리 Soft Brain 활동"
-      ],
-      links: []
-    },
     {
       organization: "순천향대학교 정보보호연구실",
       role: "학부 연구생",
@@ -86,6 +67,22 @@ const ko = {
         "ByteTrack, BotSORT 기반 객체 추적 실험 수행",
         "ResNet18 기반 이진 분류 모델 학습 및 평가",
         "YOLO Detection과 Gradio UI를 연결한 2단계 추론 파이프라인 구현"
+      ],
+      links: []
+    },
+    {
+      organization: "순천향대학교",
+      role: "Dept. of Computer Software Engineering",
+      period: "2021.03 - 현재",
+      bullets: [
+        "컴퓨터소프트웨어공학과 4학년 재학",
+        "2026 Wrtn 순천향대학교 부트캠프 참가",
+        {
+          text: "2026 로컬 창업동아리 아이디어 리그 경진대회 참가",
+          url: "papers/idea-league-slides.pdf"
+        },
+        "다수 튜터링 프로그램 튜터 활동",
+        "학술 동아리 Soft Brain 활동"
       ],
       links: []
     }
@@ -163,14 +160,14 @@ const ko = {
   ],
   publications: [
     {
-      title: "사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구",
-      meta: "한국데이터사이언스학회 동계종합학술대회 · 우수 논문상 · 2025",
-      url: "papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf"
-    },
-    {
       title: "블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계",
       meta: "한국정보보호학회 하계학술대회 CISC-S'26 · 2026",
       url: "papers/블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계.pdf"
+    },
+    {
+      title: "사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구",
+      meta: "한국데이터사이언스학회 동계종합학술대회 · 우수 논문상 · 2025",
+      url: "papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf"
     }
   ],
   awards: [
@@ -197,6 +194,16 @@ const ko = {
       label: "Phone",
       value: "010-5083-1298",
       url: "tel:+821050831298"
+    },
+    {
+      label: "GitHub",
+      value: "github.com/ihyonoo",
+      url: "https://github.com/ihyonoo"
+    },
+    {
+      label: "Tech Blog",
+      value: "velog.io/@hyun_woo",
+      url: "https://velog.io/@hyun_woo/posts"
     }
   ],
   projectDetails: {
@@ -359,52 +366,33 @@ const en = {
     footer: "© 2026 Hyunwoo Choi. All rights reserved."
   },
   nav: {
+    about: "About Me",
     experience: "Experience",
-    skills: "Skills",
+    skills: "Main Skills",
     projects: "Projects",
     awards: "Awards",
-    publications: "Publications",
-    contact: "Contact"
+    publications: "Publications"
   },
   hero: {
     eyebrow: "PORTFOLIO",
     title: "Hyunwoo Choi",
-    role: "AI / Computer Vision · Backend",
+    role: "AI · Computer Vision · Backend",
     copy:
       "I connect data, models, and APIs into working systems through AI, computer vision, and backend projects."
   },
-  heroKeywords: ["AI", "Computer Vision", "Backend"],
   sections: {
     experienceEyebrow: "EXPERIENCE",
     experienceTitle: "Experience",
     skillsEyebrow: "SKILLS",
-    skillsTitle: "Skills",
+    skillsTitle: "Main Skills",
     projectsEyebrow: "PROJECTS",
     projectsTitle: "Selected Projects",
     publicationsEyebrow: "PUBLICATIONS",
     publicationsTitle: "Publications",
     awardsEyebrow: "AWARDS",
-    awardsTitle: "Awards",
-    contactEyebrow: "CONTACT",
-    contactTitle: "Contact"
+    awardsTitle: "Awards"
   },
   experience: [
-    {
-      organization: "Soonchunhyang University",
-      role: "Dept. of Computer Software Engineering",
-      period: "2021.03 - Present",
-      bullets: [
-        "Senior student in Computer Software Engineering",
-        "Participated in the 2026 Wrtn Soonchunhyang University bootcamp",
-        {
-          text: "Participated in the 2026 Local Startup Club Idea League competition",
-          url: "papers/idea-league-slides.pdf"
-        },
-        "Worked as a tutor in multiple tutoring programs",
-        "Participated in the Soft Brain academic club"
-      ],
-      links: []
-    },
     {
       organization: "Information Security Lab, Soonchunhyang University",
       role: "Undergraduate Researcher",
@@ -439,6 +427,22 @@ const en = {
         "Ran object-tracking experiments with ByteTrack and BotSORT",
         "Trained and evaluated a ResNet18-based binary classification model",
         "Connected YOLO Detection with a Gradio UI in a two-stage inference pipeline"
+      ],
+      links: []
+    },
+    {
+      organization: "Soonchunhyang University",
+      role: "Dept. of Computer Software Engineering",
+      period: "2021.03 - Present",
+      bullets: [
+        "Senior student in Computer Software Engineering",
+        "Participated in the 2026 Wrtn Soonchunhyang University bootcamp",
+        {
+          text: "Participated in the 2026 Local Startup Club Idea League competition",
+          url: "papers/idea-league-slides.pdf"
+        },
+        "Worked as a tutor in multiple tutoring programs",
+        "Participated in the Soft Brain academic club"
       ],
       links: []
     }
@@ -517,14 +521,14 @@ const en = {
   ],
   publications: [
     {
-      title: "A Study Proposing an Automatic Hate Speech Filtering System Based on Pre-trained Language Models",
-      meta: "Korean Data Science Society Winter Conference · Excellent Paper Award · 2025",
-      url: "papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf"
-    },
-    {
       title: "Design of a Blockchain-Based Medical Equipment Usage History Management System",
       meta: "Korea Institute of Information Security and Cryptology Summer Conference CISC-S'26 · 2026",
       url: "papers/블록체인을 활용한 의료 장비 사용 이력 관리 시스템 설계.pdf"
+    },
+    {
+      title: "A Study Proposing an Automatic Hate Speech Filtering System Based on Pre-trained Language Models",
+      meta: "Korean Data Science Society Winter Conference · Excellent Paper Award · 2025",
+      url: "papers/사전학습 언어모델 기반 혐오 표현 자동 필터링 시스템 제안 연구.pdf"
     }
   ],
   awards: [
@@ -551,6 +555,16 @@ const en = {
       label: "Phone",
       value: "010-5083-1298",
       url: "tel:+821050831298"
+    },
+    {
+      label: "GitHub",
+      value: "github.com/ihyonoo",
+      url: "https://github.com/ihyonoo"
+    },
+    {
+      label: "Tech Blog",
+      value: "velog.io/@hyun_woo",
+      url: "https://velog.io/@hyun_woo/posts"
     }
   ],
   projectDetails: {

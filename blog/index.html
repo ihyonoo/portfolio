@@ -25,14 +25,12 @@
           MENU
         </button>
         <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
-          <a href="#experience" data-i18n="nav.experience">Experience</a>
+          <a href="#hero" data-i18n="nav.about">About Me</a>
           <a href="#skills" data-i18n="nav.skills">Skills</a>
           <a href="#projects" data-i18n="nav.projects">Projects</a>
+          <a href="#experience" data-i18n="nav.experience">Experience</a>
           <a href="#awards" data-i18n="nav.awards">Awards</a>
           <a href="#publications" data-i18n="nav.publications">Publications</a>
-          <a href="#contact" data-i18n="nav.contact">Contact</a>
-          <a href="https://github.com/ihyonoo" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://velog.io/@hyun_woo/posts" target="_blank" rel="noreferrer">Blog</a>
         </nav>
         <div class="language-switch" role="group" aria-label="Language">
           <button class="lang-button is-active" type="button" data-lang="ko" aria-pressed="true">KO</button>
@@ -47,22 +45,12 @@
           <div class="hero-copy-block">
             <p class="eyebrow" data-i18n="hero.eyebrow">PORTFOLIO</p>
             <h1 data-i18n="hero.title">최현우</h1>
-            <p class="hero-role" data-i18n="hero.role">AI / Computer Vision · Backend</p>
+            <p class="hero-role" data-i18n="hero.role">AI · Computer Vision · Backend</p>
             <p class="hero-copy" data-i18n="hero.copy">
               AI / Computer Vision과 Backend 프로젝트를 통해 데이터와 모델, API 흐름을 실제로 동작하는 형태로 연결해 왔습니다.
             </p>
-            <ul class="keyword-row" data-render="heroKeywords"></ul>
+            <div class="contact-list hero-contact-list" data-render="contact"></div>
           </div>
-        </div>
-      </section>
-
-      <section class="section-panel reveal" id="experience">
-        <div class="section-inner">
-          <div class="section-heading">
-            <p class="eyebrow" data-i18n="sections.experienceEyebrow">EXPERIENCE</p>
-            <h2 data-i18n="sections.experienceTitle">Experience</h2>
-          </div>
-          <div class="timeline" data-render="experience"></div>
         </div>
       </section>
 
@@ -86,6 +74,16 @@
         </div>
       </section>
 
+      <section class="section-panel reveal" id="experience">
+        <div class="section-inner">
+          <div class="section-heading">
+            <p class="eyebrow" data-i18n="sections.experienceEyebrow">EXPERIENCE</p>
+            <h2 data-i18n="sections.experienceTitle">Experience</h2>
+          </div>
+          <div class="timeline" data-render="experience"></div>
+        </div>
+      </section>
+
       <section class="section-panel reveal" id="awards">
         <div class="section-inner">
           <div class="section-heading">
@@ -103,16 +101,6 @@
             <h2 data-i18n="sections.publicationsTitle">Publications</h2>
           </div>
           <div data-render="publications"></div>
-        </div>
-      </section>
-
-      <section class="section-panel reveal" id="contact">
-        <div class="section-inner contact-layout">
-          <div>
-            <p class="eyebrow" data-i18n="sections.contactEyebrow">CONTACT</p>
-            <h2 data-i18n="sections.contactTitle">Contact</h2>
-          </div>
-          <div class="contact-list" data-render="contact"></div>
         </div>
       </section>
     </main>
