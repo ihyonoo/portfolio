@@ -6,7 +6,6 @@ const ko = {
     footer: "© 2026 최현우. All rights reserved."
   },
   nav: {
-    about: "소개",
     experience: "경력",
     skills: "기술",
     projects: "프로젝트",
@@ -23,8 +22,6 @@ const ko = {
   },
   heroKeywords: ["AI", "Computer Vision", "Backend"],
   sections: {
-    aboutEyebrow: "ABOUT",
-    aboutTitle: "소개",
     experienceEyebrow: "EXPERIENCE",
     experienceTitle: "경력",
     skillsEyebrow: "SKILLS",
@@ -37,10 +34,6 @@ const ko = {
     awardsTitle: "수상",
     contactEyebrow: "CONTACT",
     contactTitle: "연락처"
-  },
-  about: {
-    body:
-      "<p>실험 코드에서 멈추지 않고 데이터, 모델, API 흐름을 실제로 동작하는 시스템으로 연결하는 개발자입니다.</p><p>AI / Computer Vision과 Backend를 중심으로 문제를 구조화하고, 구현과 검증을 통해 사용자에게 닿는 결과물까지 완성하는 일을 좋아합니다.</p>"
   },
   experience: [
     {
@@ -366,7 +359,6 @@ const en = {
     footer: "© 2026 Hyunwoo Choi. All rights reserved."
   },
   nav: {
-    about: "About",
     experience: "Experience",
     skills: "Skills",
     projects: "Projects",
@@ -383,8 +375,6 @@ const en = {
   },
   heroKeywords: ["AI", "Computer Vision", "Backend"],
   sections: {
-    aboutEyebrow: "ABOUT",
-    aboutTitle: "Positioning",
     experienceEyebrow: "EXPERIENCE",
     experienceTitle: "Experience",
     skillsEyebrow: "SKILLS",
@@ -397,10 +387,6 @@ const en = {
     awardsTitle: "Awards",
     contactEyebrow: "CONTACT",
     contactTitle: "Contact"
-  },
-  about: {
-    body:
-      "<p>I build beyond experiment code, connecting data, models, and APIs into systems that actually run.</p><p>My work focuses on AI / Computer Vision and backend systems that move from implementation to usable outcomes.</p>"
   },
   experience: [
     {
