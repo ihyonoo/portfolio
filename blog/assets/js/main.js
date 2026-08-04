@@ -199,6 +199,29 @@
     });
   }
 
+  function renderBulletList(bullets) {
+    const list = document.createElement("ul");
+
+    bullets.forEach(function (bullet) {
+      const item = document.createElement("li");
+
+      if (typeof bullet === "string") {
+        item.textContent = bullet;
+      } else {
+        const anchor = document.createElement("a");
+        anchor.className = "text-link";
+        anchor.href = bullet.url;
+        anchor.textContent = bullet.text;
+        applySafeExternal(anchor, bullet.url);
+        item.appendChild(anchor);
+      }
+
+      list.appendChild(item);
+    });
+
+    return list;
+  }
+
   function renderExperience() {
     const target = document.querySelector('[data-render="experience"]');
 
@@ -225,25 +248,22 @@
       role.className = "card-copy";
       role.textContent = entry.role;
 
-      const bullets = document.createElement("ul");
-      entry.bullets.forEach(function (bullet) {
-        const item = document.createElement("li");
+      content.append(title, role);
 
-        if (typeof bullet === "string") {
-          item.textContent = bullet;
-        } else {
-          const anchor = document.createElement("a");
-          anchor.className = "text-link";
-          anchor.href = bullet.url;
-          anchor.textContent = bullet.text;
-          applySafeExternal(anchor, bullet.url);
-          item.appendChild(anchor);
-        }
+      if (entry.groups) {
+        entry.groups.forEach(function (group) {
+          const groupBlock = document.createElement("div");
+          groupBlock.className = "experience-group";
 
-        bullets.appendChild(item);
-      });
+          const groupTitle = document.createElement("h4");
+          groupTitle.textContent = group.title;
 
-      content.append(title, role, bullets);
+          groupBlock.append(groupTitle, renderBulletList(group.bullets));
+          content.appendChild(groupBlock);
+        });
+      } else {
+        content.appendChild(renderBulletList(entry.bullets));
+      }
 
       if (entry.links && entry.links.length) {
         entry.links.forEach(function (link) {
@@ -374,6 +394,41 @@
 
       article.append(itemTitle, meta);
 
+      panel.appendChild(article);
+    });
+
+    target.appendChild(panel);
+  }
+
+  function renderAwards() {
+    const target = document.querySelector('[data-render="awards"]');
+
+    if (!target) {
+      return;
+    }
+
+    target.replaceChildren();
+
+    const panel = document.createElement("section");
+    panel.className = "list-panel";
+
+    const heading = document.createElement("h3");
+    heading.textContent = locale().sections.awardsTitle;
+    panel.appendChild(heading);
+
+    locale().awards.forEach(function (award) {
+      const article = document.createElement("article");
+      article.className = "award-item";
+
+      const contest = document.createElement("p");
+      contest.className = "card-copy award-contest";
+      contest.textContent = award.contest + " — " + award.award;
+
+      const meta = document.createElement("p");
+      meta.className = "timeline-meta";
+      meta.textContent = [award.date, award.organizer].join(" · ");
+
+      article.append(contest, meta);
       panel.appendChild(article);
     });
 
@@ -592,7 +647,7 @@
       renderExperience();
       renderSkills();
       renderProjects();
-      renderListPanel("awards", locale().sections.awardsTitle);
+      renderAwards();
       renderListPanel("publications", locale().sections.publicationsTitle);
       renderContact();
     }
