@@ -125,6 +125,17 @@ const ko = {
   ],
   projects: [
     {
+      id: "visionops",
+      title: "VisionOps",
+      status: "In Progress",
+      type: "Individual",
+      summary:
+        "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
+      stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
+      detailUrl: "projects/visionops.html",
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
+    {
       id: "mediledger",
       title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
@@ -134,17 +145,6 @@ const ko = {
       stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
       detailUrl: "projects/mediledger-equptrace.html",
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
-    },
-    {
-      id: "visionops",
-      title: "VisionOps",
-      status: "In Progress",
-      type: "Individual",
-      summary:
-        "데이터셋 분할, 모델 학습, 결과 분석, 인퍼런스 시각화를 프로젝트별로 관리하는 Computer Vision 운영 플랫폼.",
-      stack: "FastAPI/React/Python/SQLite/Ultralytics YOLO/SSE",
-      detailUrl: "projects/visionops.html",
-      githubUrl: ""
     },
     {
       id: "hateSpeech",
@@ -197,8 +197,8 @@ const ko = {
   contact: [
     {
       label: "Email",
-      value: "ihyonoo0520@gmail.com",
-      url: "mailto:ihyonoo0520@gmail.com"
+      value: "hyunu.choe@gmail.com",
+      url: "mailto:hyunu.choe@gmail.com"
     },
     {
       label: "Phone",
@@ -207,6 +207,43 @@ const ko = {
     }
   ],
   projectDetails: {
+    visionops: {
+      title: "VisionOps",
+      status: "In Progress",
+      type: "Individual",
+      summary:
+        "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
+      mediaLabel: "Computer Vision · MLOps Platform",
+      tags: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "Detection", "Segmentation", "Classification", "Pose Estimation"],
+      sections: [
+        {
+          title: "Problem",
+          body:
+            ""
+        },
+        {
+          title: "My Role",
+          body:
+            ""
+        },
+        {
+          title: "Architecture",
+          body:
+            ""
+        },
+        {
+          title: "Tech Stack",
+          body:
+            ""
+        },
+        {
+          title: "What I Learned / Review",
+          body:
+            ""
+        }
+      ],
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
     mediledger: {
       title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
@@ -243,52 +280,6 @@ const ko = {
         }
       ],
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
-    },
-    visionops: {
-      title: "VisionOps",
-      status: "In Progress",
-      type: "Individual",
-      summary:
-        "데이터셋 분할, 모델 학습, 결과 분석, 인퍼런스 시각화를 프로젝트별로 관리하는 Computer Vision 운영 플랫폼.",
-      mediaLabel: "Computer Vision · Training Operations",
-      tags: [
-        "FastAPI",
-        "React",
-        "Python",
-        "SQLite",
-        "Ultralytics YOLO",
-        "subprocess CLI",
-        "SSE",
-        "Local Artifacts"
-      ],
-      sections: [
-        {
-          title: "Problem",
-          body:
-            ""
-        },
-        {
-          title: "My Role",
-          body:
-            ""
-        },
-        {
-          title: "Architecture",
-          body:
-            ""
-        },
-        {
-          title: "Tech Stack",
-          body:
-            ""
-        },
-        {
-          title: "What I Learned / Review",
-          body:
-            ""
-        }
-      ],
-      githubUrl: ""
     },
     hateSpeech: {
       title: "KoELECTRA 기반 한국어 혐오 표현 탐지 시스템",
@@ -494,6 +485,17 @@ const en = {
   ],
   projects: [
     {
+      id: "visionops",
+      title: "VisionOps",
+      status: "In Progress",
+      type: "Individual",
+      summary:
+        "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
+      stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
+      detailUrl: "projects/visionops.html",
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
+    {
       id: "mediledger",
       title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
@@ -503,17 +505,6 @@ const en = {
       stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
       detailUrl: "projects/mediledger-equptrace.html",
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
-    },
-    {
-      id: "visionops",
-      title: "VisionOps",
-      status: "In Progress",
-      type: "Individual",
-      summary:
-        "A computer vision operations platform for project-based dataset splitting, model training, result analysis, and inference visualization.",
-      stack: "FastAPI/React/Python/SQLite/Ultralytics YOLO/SSE",
-      detailUrl: "projects/visionops.html",
-      githubUrl: ""
     },
     {
       id: "hateSpeech",
@@ -567,8 +558,8 @@ const en = {
   contact: [
     {
       label: "Email",
-      value: "ihyonoo0520@gmail.com",
-      url: "mailto:ihyonoo0520@gmail.com"
+      value: "hyunu.choe@gmail.com",
+      url: "mailto:hyunu.choe@gmail.com"
     },
     {
       label: "Phone",
@@ -577,6 +568,43 @@ const en = {
     }
   ],
   projectDetails: {
+    visionops: {
+      title: "VisionOps",
+      status: "In Progress",
+      type: "Individual",
+      summary:
+        "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
+      mediaLabel: "Computer Vision · MLOps Platform",
+      tags: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "Detection", "Segmentation", "Classification", "Pose Estimation"],
+      sections: [
+        {
+          title: "Problem",
+          body:
+            ""
+        },
+        {
+          title: "My Role",
+          body:
+            ""
+        },
+        {
+          title: "Architecture",
+          body:
+            ""
+        },
+        {
+          title: "Tech Stack",
+          body:
+            ""
+        },
+        {
+          title: "What I Learned / Review",
+          body:
+            ""
+        }
+      ],
+      githubUrl: "https://github.com/ihyonoo/visionops"
+    },
     mediledger: {
       title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
@@ -613,52 +641,6 @@ const en = {
         }
       ],
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
-    },
-    visionops: {
-      title: "VisionOps",
-      status: "In Progress",
-      type: "Individual",
-      summary:
-        "A computer vision operations platform for project-based dataset splitting, model training, result analysis, and inference visualization.",
-      mediaLabel: "Computer Vision · Training Operations",
-      tags: [
-        "FastAPI",
-        "React",
-        "Python",
-        "SQLite",
-        "Ultralytics YOLO",
-        "subprocess CLI",
-        "SSE",
-        "Local Artifacts"
-      ],
-      sections: [
-        {
-          title: "Problem",
-          body:
-            ""
-        },
-        {
-          title: "My Role",
-          body:
-            ""
-        },
-        {
-          title: "Architecture",
-          body:
-            ""
-        },
-        {
-          title: "Tech Stack",
-          body:
-            ""
-        },
-        {
-          title: "What I Learned / Review",
-          body:
-            ""
-        }
-      ],
-      githubUrl: ""
     },
     hateSpeech: {
       title: "Korean Hate Speech Detection with KoELECTRA",
