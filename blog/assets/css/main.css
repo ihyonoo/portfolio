@@ -113,6 +113,7 @@ button {
 .menu-toggle,
 .eyebrow,
 .status,
+.badge-type,
 .button,
 .project-number {
   font-family: var(--font-mono);
@@ -329,7 +330,8 @@ h3 {
 }
 
 .project-number,
-.status {
+.status,
+.badge-type {
   color: var(--muted);
   font-size: 12px;
 }
@@ -340,6 +342,16 @@ h3 {
 
 .status.is-completed {
   color: var(--link);
+}
+
+.badge-type.is-team {
+  color: var(--warning);
+}
+
+.badge-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .section-heading {
@@ -580,6 +592,10 @@ footer,
   margin-top: 0;
   margin-bottom: 28px;
   padding-top: 0;
+}
+
+.detail-hero .badge-group {
+  margin: 0 0 16px;
 }
 
 .detail-meta {

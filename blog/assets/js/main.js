@@ -126,6 +126,18 @@
     }
   }
 
+  function setTypeClass(element, type) {
+    element.className = "badge-type";
+
+    if (type === "Team") {
+      element.classList.add("is-team");
+    }
+
+    if (type === "Individual") {
+      element.classList.add("is-individual");
+    }
+  }
+
   function appendTags(parent, tags) {
     const tagRow = document.createElement("ul");
     tagRow.className = "tag-row";
@@ -309,9 +321,18 @@
       number.className = "project-number";
       number.textContent = String(index + 1).padStart(2, "0");
 
+      const badges = document.createElement("div");
+      badges.className = "badge-group";
+
+      const type = document.createElement("span");
+      setTypeClass(type, project.type);
+      type.textContent = project.type;
+
       const status = document.createElement("span");
       setStatusClass(status, project.status);
       status.textContent = project.status;
+
+      badges.append(type, status);
 
       const title = document.createElement("h3");
       title.textContent = project.title;
@@ -327,7 +348,7 @@
         createButton("GitHub", project.githubUrl, "button")
       );
 
-      header.append(number, status);
+      header.append(number, badges);
       article.append(header, title, summary);
       appendTags(article, project.stack.split("/"));
       article.appendChild(actions);
@@ -438,9 +459,18 @@
 
     const copy = document.createElement("div");
 
-    const status = document.createElement("p");
+    const badges = document.createElement("div");
+    badges.className = "badge-group";
+
+    const type = document.createElement("span");
+    setTypeClass(type, detail.type);
+    type.textContent = detail.type;
+
+    const status = document.createElement("span");
     setStatusClass(status, detail.status);
     status.textContent = detail.status;
+
+    badges.append(type, status);
 
     const title = document.createElement("h1");
     title.textContent = detail.title;
@@ -456,7 +486,7 @@
       createButton("GitHub", detail.githubUrl, "button")
     );
 
-    copy.append(actions, status, title, summary);
+    copy.append(actions, badges, title, summary);
     appendTags(copy, detail.tags);
 
     const media = document.createElement("div");

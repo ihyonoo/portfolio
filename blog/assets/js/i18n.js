@@ -128,6 +128,7 @@ const ko = {
       id: "visionops",
       title: "VisionOps",
       status: "In Progress",
+      type: "Individual",
       summary:
         "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
       stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
@@ -138,6 +139,7 @@ const ko = {
       id: "mediledger",
       title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
+      type: "Individual",
       summary:
         "RTLS 기반 위치 추적, NFC 사용 이력, Hyperledger Besu 무결성 검증을 연결한 의료 장비 관리 시스템.",
       stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
@@ -148,10 +150,22 @@ const ko = {
       id: "hateSpeech",
       title: "KoELECTRA 기반 한국어 혐오 표현 탐지 시스템",
       status: "Completed",
+      type: "Individual",
       summary: "K-MHaS 데이터 기반 한국어 혐오 표현 8개 유형 멀티라벨 분류와 Streamlit 데모.",
       stack: "Python/PyTorch/Transformers/KoELECTRA/Streamlit",
       detailUrl: "projects/hate-speech-detection.html",
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
+    },
+    {
+      id: "smartglass",
+      title: "스마트 글래스 시뮬레이션",
+      status: "Completed",
+      type: "Team",
+      summary:
+        "음성 명령으로 길찾기·이미지 번역·실시간 통역·여행지 질문응답(RAG)을 오버레이 UI로 보여주는 웹캠 기반 스마트 글래스 시뮬레이션. 5인 팀에서 프론트엔드/UI 담당.",
+      stack: "Python/FastAPI/React/Vite/TailwindCSS/Three.js",
+      detailUrl: "projects/smartglass-simulation.html",
+      githubUrl: "https://github.com/Yoon-Tae-Jun/smartglass-simulation"
     }
   ],
   publications: [
@@ -196,6 +210,7 @@ const ko = {
     visionops: {
       title: "VisionOps",
       status: "In Progress",
+      type: "Individual",
       summary:
         "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
       mediaLabel: "Computer Vision · MLOps Platform",
@@ -232,6 +247,7 @@ const ko = {
     mediledger: {
       title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
+      type: "Individual",
       summary:
         "RTLS 기반 위치 추적, NFC 사용 이력, Hyperledger Besu 무결성 검증을 연결한 의료 장비 관리 시스템.",
       mediaLabel: "RTLS · NFC · Blockchain Integrity",
@@ -268,6 +284,7 @@ const ko = {
     hateSpeech: {
       title: "KoELECTRA 기반 한국어 혐오 표현 탐지 시스템",
       status: "Completed",
+      type: "Individual",
       summary: "K-MHaS 데이터 기반 한국어 혐오 표현 8개 유형 멀티라벨 분류와 Streamlit 데모.",
       mediaLabel: "Korean NLP · Multi-label Classification",
       tags: ["Python", "PyTorch", "Transformers", "KoELECTRA", "Streamlit", "K-MHaS"],
@@ -299,6 +316,43 @@ const ko = {
         }
       ],
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
+    },
+    smartglass: {
+      title: "스마트 글래스 시뮬레이션",
+      status: "Completed",
+      type: "Team",
+      summary:
+        "음성 명령으로 길찾기·이미지 번역·실시간 통역·여행지 질문응답(RAG)을 오버레이 UI로 보여주는 웹캠 기반 스마트 글래스 시뮬레이션. 5인 팀에서 프론트엔드/UI 담당.",
+      mediaLabel: "AR Glass Simulation · Voice Command",
+      tags: ["Python", "FastAPI", "React", "Vite", "TailwindCSS", "Three.js", "CLOVA Speech", "Papago", "RAG"],
+      sections: [
+        {
+          title: "Problem",
+          body:
+            ""
+        },
+        {
+          title: "My Role",
+          body:
+            ""
+        },
+        {
+          title: "Architecture",
+          body:
+            ""
+        },
+        {
+          title: "Tech Stack",
+          body:
+            ""
+        },
+        {
+          title: "What I Learned / Review",
+          body:
+            ""
+        }
+      ],
+      githubUrl: "https://github.com/Yoon-Tae-Jun/smartglass-simulation"
     }
   }
 };
@@ -434,6 +488,7 @@ const en = {
       id: "visionops",
       title: "VisionOps",
       status: "In Progress",
+      type: "Individual",
       summary:
         "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
       stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
@@ -444,6 +499,7 @@ const en = {
       id: "mediledger",
       title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
+      type: "Individual",
       summary:
         "A medical equipment management system that connects RTLS-based location tracking, NFC usage history, and Hyperledger Besu integrity verification.",
       stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
@@ -454,11 +510,23 @@ const en = {
       id: "hateSpeech",
       title: "Korean Hate Speech Detection with KoELECTRA",
       status: "Completed",
+      type: "Individual",
       summary:
         "A K-MHaS-based multi-label classifier for eight Korean hate speech categories with a Streamlit demo.",
       stack: "Python/PyTorch/Transformers/KoELECTRA/Streamlit",
       detailUrl: "projects/hate-speech-detection.html",
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
+    },
+    {
+      id: "smartglass",
+      title: "Smart Glass Simulation",
+      status: "Completed",
+      type: "Team",
+      summary:
+        "A webcam-based smart glass simulation for travelers that shows voice-command-driven navigation, image translation, real-time interpretation, and RAG-based Q&A as an overlay UI. Responsible for frontend/UI in a 5-person team.",
+      stack: "Python/FastAPI/React/Vite/TailwindCSS/Three.js",
+      detailUrl: "projects/smartglass-simulation.html",
+      githubUrl: "https://github.com/Yoon-Tae-Jun/smartglass-simulation"
     }
   ],
   publications: [
@@ -503,6 +571,7 @@ const en = {
     visionops: {
       title: "VisionOps",
       status: "In Progress",
+      type: "Individual",
       summary:
         "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
       mediaLabel: "Computer Vision · MLOps Platform",
@@ -539,6 +608,7 @@ const en = {
     mediledger: {
       title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
+      type: "Individual",
       summary:
         "A medical equipment management system that connects RTLS-based location tracking, NFC usage history, and Hyperledger Besu integrity verification.",
       mediaLabel: "RTLS · NFC · Blockchain Integrity",
@@ -575,6 +645,7 @@ const en = {
     hateSpeech: {
       title: "Korean Hate Speech Detection with KoELECTRA",
       status: "Completed",
+      type: "Individual",
       summary:
         "A K-MHaS-based multi-label classifier for eight Korean hate speech categories with a Streamlit demo.",
       mediaLabel: "Korean NLP · Multi-label Classification",
@@ -607,6 +678,43 @@ const en = {
         }
       ],
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
+    },
+    smartglass: {
+      title: "Smart Glass Simulation",
+      status: "Completed",
+      type: "Team",
+      summary:
+        "A webcam-based smart glass simulation for travelers that shows voice-command-driven navigation, image translation, real-time interpretation, and RAG-based Q&A as an overlay UI. Responsible for frontend/UI in a 5-person team.",
+      mediaLabel: "AR Glass Simulation · Voice Command",
+      tags: ["Python", "FastAPI", "React", "Vite", "TailwindCSS", "Three.js", "CLOVA Speech", "Papago", "RAG"],
+      sections: [
+        {
+          title: "Problem",
+          body:
+            ""
+        },
+        {
+          title: "My Role",
+          body:
+            ""
+        },
+        {
+          title: "Architecture",
+          body:
+            ""
+        },
+        {
+          title: "Tech Stack",
+          body:
+            ""
+        },
+        {
+          title: "What I Learned / Review",
+          body:
+            ""
+        }
+      ],
+      githubUrl: "https://github.com/Yoon-Tae-Jun/smartglass-simulation"
     }
   }
 };

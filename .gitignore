@@ -1,10 +1,5 @@
 # macOS
 .DS_Store
 
-# Project docs
-docs/
-
-DESIGN.md
-.gstack/
-.superpowers/
-.gstack
+# Personal documents (not published)
+resume/
