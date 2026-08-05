@@ -163,7 +163,7 @@ const ko = {
   projects: [
     {
       id: "mediledger",
-      title: "Mediledger & EquipTrace",
+      title: "Mediledger & EquipTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
       type: "Individual",
       summary: [
@@ -173,34 +173,47 @@ const ko = {
       ],
       stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
       detailUrl: "projects/mediledger-equptrace.html",
+      liveUrl: "https://mediledger.xyz",
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
     },
     {
       id: "visionops",
-      title: "VisionOps",
+      title: "VisionOps\n- Computer Vision MLOps 플랫폼",
       status: "In Progress",
       type: "Individual",
-      summary: ["요약 1", "요약 2", "요약 3"],
+      summary: [
+        "데이터셋 관리(프로젝트별 관리, 데이터셋 랜덤 분할, 증강)",
+        "Object Detection·Classification·Segmentation·Pose 등 다양한 CV 작업에 대해 원하는 모델로 학습·추론 지원",
+        "학습된 모델 간 성능 비교·분석"
+      ],
       stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
       detailUrl: "projects/visionops.html",
       githubUrl: "https://github.com/ihyonoo/visionops"
     },
     {
       id: "hateSpeech",
-      title: "KoELECTRA 기반 한국어 혐오 표현 탐지 시스템",
+      title: "Garim\n- KoELECTRA 한국어 혐오 표현 탐지 시스템",
       status: "Completed",
       type: "Individual",
-      summary: ["요약 1", "요약 2", "요약 3"],
+      summary: [
+        "8종 혐오 유형을 동시에 탐지하는 멀티라벨 분류",
+        "사전학습 언어모델 파인튜닝 및 K-MHaS 데이터셋 기반 학습",
+        "Streamlit 기반 댓글 탐지 데모를 통한 실증(혐오 판정 문장 블러 처리)"
+      ],
       stack: "Python/PyTorch/Transformers/KoELECTRA/Streamlit",
       detailUrl: "projects/hate-speech-detection.html",
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
     },
     {
       id: "smartglass",
-      title: "NAY-BEN - 스마트 글래스 시뮬레이션 시스템",
+      title: "NAY-BEN\n- 스마트 글래스 시뮬레이션 플랫폼",
       status: "Completed",
       type: "Team",
-      summary: ["요약 1", "요약 2", "요약 3"],
+      summary: [
+        "\"헤이 글래스\" 호출어를 통하여 실시간 음성 번역·이미지 번역·길찾기·RAG 기반 여행 정보 질의응답 통합 제공",
+        "실시간 STT 스트리밍과 CLOVA Speech/Papago·NAVER Maps API, pgvector RAG + 로컬 LLM 연동",
+        "프론트엔드 담당"
+      ],
       stack: "Python/FastAPI/React/Vite/TailwindCSS/Three.js",
       detailUrl: "projects/smartglass-simulation.html",
       githubUrl: "https://github.com/Yoon-Tae-Jun/smartglass-simulation"
@@ -262,10 +275,14 @@ const ko = {
   ],
   projectDetails: {
     visionops: {
-      title: "VisionOps",
+      title: "VisionOps\n- Computer Vision MLOps 플랫폼",
       status: "In Progress",
       type: "Individual",
-      summary: ["요약 1", "요약 2", "요약 3"],
+      summary: [
+        "데이터셋 관리(프로젝트별 관리, 데이터셋 랜덤 분할, 증강)",
+        "Object Detection·Classification·Segmentation·Pose 등 다양한 CV 작업에 대해 원하는 모델로 학습·추론 지원",
+        "학습된 모델 간 성능 비교·분석"
+      ],
       mediaLabel: "Computer Vision · MLOps Platform",
       tags: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "Detection", "Segmentation", "Classification", "Pose Estimation"],
       sections: [
@@ -298,7 +315,7 @@ const ko = {
       githubUrl: "https://github.com/ihyonoo/visionops"
     },
     mediledger: {
-      title: "Mediledger & EquipTrace",
+      title: "Mediledger & EquipTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
       status: "In Progress",
       type: "Individual",
       summary: [
@@ -335,13 +352,18 @@ const ko = {
             ""
         }
       ],
+      liveUrl: "https://mediledger.xyz",
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
     },
     hateSpeech: {
-      title: "KoELECTRA 기반 한국어 혐오 표현 탐지 시스템",
+      title: "Garim\n- KoELECTRA 한국어 혐오 표현 탐지 시스템",
       status: "Completed",
       type: "Individual",
-      summary: ["요약 1", "요약 2", "요약 3"],
+      summary: [
+        "8종 혐오 유형을 동시에 탐지하는 멀티라벨 분류",
+        "사전학습 언어모델 파인튜닝 및 K-MHaS 데이터셋 기반 학습",
+        "Streamlit 기반 댓글 탐지 데모를 통한 실증(혐오 판정 문장 블러 처리)"
+      ],
       mediaLabel: "Korean NLP · Multi-label Classification",
       tags: ["Python", "PyTorch", "Transformers", "KoELECTRA", "Streamlit", "K-MHaS"],
       sections: [
@@ -374,10 +396,14 @@ const ko = {
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
     },
     smartglass: {
-      title: "NAY-BEN - 스마트 글래스 시뮬레이션 시스템",
+      title: "NAY-BEN\n- 스마트 글래스 시뮬레이션 플랫폼",
       status: "Completed",
       type: "Team",
-      summary: ["요약 1", "요약 2", "요약 3"],
+      summary: [
+        "\"헤이 글래스\" 호출어를 통하여 실시간 음성 번역·이미지 번역·길찾기·RAG 기반 여행 정보 질의응답 통합 제공",
+        "실시간 STT 스트리밍과 CLOVA Speech/Papago·NAVER Maps API, pgvector RAG + 로컬 LLM 연동",
+        "프론트엔드 담당"
+      ],
       mediaLabel: "AR Glass Simulation · Voice Command",
       tags: ["Python", "FastAPI", "React", "Vite", "TailwindCSS", "Three.js", "CLOVA Speech", "Papago", "RAG"],
       sections: [
@@ -431,7 +457,7 @@ const en = {
   hero: {
     eyebrow: "PORTFOLIO",
     title: "Hyunwoo Choi",
-    role: "AI · Computer Vision · Backend"
+    role: "AI · Computer Vision · Backend · Blockchain"
   },
   sections: {
     experienceEyebrow: "EXPERIENCE",
@@ -581,41 +607,54 @@ const en = {
       title: "Mediledger & EquipTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
       type: "Individual",
-      summary:
-        "A medical equipment management system that connects RTLS-based location tracking, NFC usage history, and Hyperledger Besu integrity verification.",
+      summary: [
+        "RTLS-based indoor equipment location tracking",
+        "Blockchain-based integrity guarantee for equipment usage history",
+        "NFC-based equipment identification and rental/return"
+      ],
       stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
       detailUrl: "projects/mediledger-equptrace.html",
+      liveUrl: "https://mediledger.xyz",
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
     },
     {
       id: "visionops",
-      title: "VisionOps",
+      title: "VisionOps\n- Computer Vision MLOps Platform",
       status: "In Progress",
       type: "Individual",
-      summary:
-        "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
+      summary: [
+        "Dataset management (per-project organization, random dataset splitting, augmentation)",
+        "Training and inference on user-selected models across CV tasks such as Object Detection, Classification, Segmentation, and Pose (currently supports YOLO, more models planned)",
+        "Performance comparison and analysis across trained models"
+      ],
       stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
       detailUrl: "projects/visionops.html",
       githubUrl: "https://github.com/ihyonoo/visionops"
     },
     {
       id: "hateSpeech",
-      title: "Korean Hate Speech Detection with KoELECTRA",
+      title: "Garim\n- KoELECTRA Korean Hate Speech Detection System",
       status: "Completed",
       type: "Individual",
-      summary:
-        "A K-MHaS-based multi-label classifier for eight Korean hate speech categories with a Streamlit demo.",
+      summary: [
+        "Multi-label classification detecting 8 hate speech categories simultaneously",
+        "Fine-tuned a pretrained language model and trained on the K-MHaS dataset",
+        "Built a real-time detection demo with Streamlit (blurs flagged sentences)"
+      ],
       stack: "Python/PyTorch/Transformers/KoELECTRA/Streamlit",
       detailUrl: "projects/hate-speech-detection.html",
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
     },
     {
       id: "smartglass",
-      title: "NAY-BEN - Smart Glass Simulation System",
+      title: "NAY-BEN\n- Smart Glass Simulation Platform",
       status: "Completed",
       type: "Team",
-      summary:
-        "A webcam-based smart glass simulation for travelers that shows voice-command-driven navigation, image translation, real-time interpretation, and RAG-based Q&A as an overlay UI. Responsible for frontend/UI in a 5-person team.",
+      summary: [
+        "Provided real-time voice translation, image translation, navigation, and RAG-based travel Q&A triggered by the \"Hey Glass\" wake word",
+        "Real-time STT streaming integrated with CLOVA Speech/Papago, NAVER Maps API, pgvector RAG, and a local LLM",
+        "Responsible for frontend development"
+      ],
       stack: "Python/FastAPI/React/Vite/TailwindCSS/Three.js",
       detailUrl: "projects/smartglass-simulation.html",
       githubUrl: "https://github.com/Yoon-Tae-Jun/smartglass-simulation"
@@ -677,11 +716,14 @@ const en = {
   ],
   projectDetails: {
     visionops: {
-      title: "VisionOps",
+      title: "VisionOps\n- Computer Vision MLOps Platform",
       status: "In Progress",
       type: "Individual",
-      summary:
-        "A local-first computer vision ops web platform covering object detection, segmentation, classification, pose estimation, and other vision models.",
+      summary: [
+        "Dataset management (per-project organization, random dataset splitting, augmentation)",
+        "Training and inference on user-selected models across CV tasks such as Object Detection, Classification, Segmentation, and Pose (currently supports YOLO, more models planned)",
+        "Performance comparison and analysis across trained models"
+      ],
       mediaLabel: "Computer Vision · MLOps Platform",
       tags: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "Detection", "Segmentation", "Classification", "Pose Estimation"],
       sections: [
@@ -717,8 +759,11 @@ const en = {
       title: "Mediledger & EquipTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
       type: "Individual",
-      summary:
-        "A medical equipment management system that connects RTLS-based location tracking, NFC usage history, and Hyperledger Besu integrity verification.",
+      summary: [
+        "RTLS-based indoor equipment location tracking",
+        "Blockchain-based integrity guarantee for equipment usage history",
+        "NFC-based equipment identification and rental/return"
+      ],
       mediaLabel: "RTLS · NFC · Blockchain Integrity",
       tags: ["FastAPI", "PostgreSQL", "Redis", "React", "Hyperledger Besu", "Solidity", "QBFT"],
       sections: [
@@ -748,14 +793,18 @@ const en = {
             ""
         }
       ],
+      liveUrl: "https://mediledger.xyz",
       githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
     },
     hateSpeech: {
-      title: "Korean Hate Speech Detection with KoELECTRA",
+      title: "Garim\n- KoELECTRA Korean Hate Speech Detection System",
       status: "Completed",
       type: "Individual",
-      summary:
-        "A K-MHaS-based multi-label classifier for eight Korean hate speech categories with a Streamlit demo.",
+      summary: [
+        "Multi-label classification detecting 8 hate speech categories simultaneously",
+        "Fine-tuned a pretrained language model and trained on the K-MHaS dataset",
+        "Built a real-time detection demo with Streamlit (blurs flagged sentences)"
+      ],
       mediaLabel: "Korean NLP · Multi-label Classification",
       tags: ["Python", "PyTorch", "Transformers", "KoELECTRA", "Streamlit", "K-MHaS"],
       sections: [
@@ -788,11 +837,14 @@ const en = {
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
     },
     smartglass: {
-      title: "NAY-BEN - Smart Glass Simulation System",
+      title: "NAY-BEN\n- Smart Glass Simulation Platform",
       status: "Completed",
       type: "Team",
-      summary:
-        "A webcam-based smart glass simulation for travelers that shows voice-command-driven navigation, image translation, real-time interpretation, and RAG-based Q&A as an overlay UI. Responsible for frontend/UI in a 5-person team.",
+      summary: [
+        "Provided real-time voice translation, image translation, navigation, and RAG-based travel Q&A triggered by the \"Hey Glass\" wake word",
+        "Real-time STT streaming integrated with CLOVA Speech/Papago, NAVER Maps API, pgvector RAG, and a local LLM",
+        "Responsible for frontend development"
+      ],
       mediaLabel: "AR Glass Simulation · Voice Command",
       tags: ["Python", "FastAPI", "React", "Vite", "TailwindCSS", "Three.js", "CLOVA Speech", "Papago", "RAG"],
       sections: [
