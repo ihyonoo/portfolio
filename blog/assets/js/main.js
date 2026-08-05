@@ -126,6 +126,14 @@
     }
   }
 
+  function typeLabel(type) {
+    if (currentLang === "ko") {
+      return type === "Team" ? "팀 프로젝트" : "개인 프로젝트";
+    }
+
+    return type;
+  }
+
   function setTypeClass(element, type) {
     element.className = "badge-type";
 
@@ -220,6 +228,19 @@
     });
 
     return list;
+  }
+
+  function renderSummary(className, value) {
+    if (Array.isArray(value)) {
+      const list = renderBulletList(value);
+      list.className = className;
+      return list;
+    }
+
+    const paragraph = document.createElement("p");
+    paragraph.className = className;
+    paragraph.textContent = value;
+    return paragraph;
   }
 
   function renderExperience() {
@@ -330,7 +351,7 @@
 
       const type = document.createElement("span");
       setTypeClass(type, project.type);
-      type.textContent = project.type;
+      type.textContent = typeLabel(project.type);
 
       const status = document.createElement("span");
       setStatusClass(status, project.status);
@@ -341,9 +362,7 @@
       const title = document.createElement("h3");
       title.textContent = project.title;
 
-      const summary = document.createElement("p");
-      summary.className = "card-copy";
-      summary.textContent = project.summary;
+      const summary = renderSummary("card-copy", project.summary);
 
       const actions = document.createElement("div");
       actions.className = "card-actions";
@@ -503,7 +522,7 @@
 
     const type = document.createElement("span");
     setTypeClass(type, detail.type);
-    type.textContent = detail.type;
+    type.textContent = typeLabel(detail.type);
 
     const status = document.createElement("span");
     setStatusClass(status, detail.status);
@@ -514,9 +533,7 @@
     const title = document.createElement("h1");
     title.textContent = detail.title;
 
-    const summary = document.createElement("p");
-    summary.className = "detail-copy";
-    summary.textContent = detail.summary;
+    const summary = renderSummary("detail-copy", detail.summary);
 
     const actions = document.createElement("div");
     actions.className = "card-actions detail-actions";
