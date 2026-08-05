@@ -126,6 +126,14 @@
     }
   }
 
+  function typeLabel(type) {
+    if (currentLang === "ko") {
+      return type === "Team" ? "팀 프로젝트" : "개인 프로젝트";
+    }
+
+    return type;
+  }
+
   function setTypeClass(element, type) {
     element.className = "badge-type";
 
@@ -165,6 +173,20 @@
     anchor.className = className;
     anchor.href = url;
     anchor.textContent = label;
+    applySafeExternal(anchor, url);
+    return anchor;
+  }
+
+  function createLiveDemoButton(url, className) {
+    const anchor = document.createElement("a");
+    anchor.className = className + " button-live";
+    anchor.href = url;
+
+    const dot = document.createElement("span");
+    dot.className = "live-dot";
+    anchor.appendChild(dot);
+    anchor.appendChild(document.createTextNode("Live Demo"));
+
     applySafeExternal(anchor, url);
     return anchor;
   }
@@ -220,6 +242,33 @@
     });
 
     return list;
+  }
+
+  function appendProjectTitle(el, titleText) {
+    const [main, ...rest] = titleText.split("\n");
+
+    const mainSpan = document.createElement("span");
+    mainSpan.className = "project-title-main";
+    mainSpan.textContent = main;
+    el.appendChild(mainSpan);
+
+    if (rest.length) {
+      el.appendChild(document.createElement("br"));
+      el.appendChild(document.createTextNode(rest.join("\n")));
+    }
+  }
+
+  function renderSummary(className, value) {
+    if (Array.isArray(value)) {
+      const list = renderBulletList(value);
+      list.className = className;
+      return list;
+    }
+
+    const paragraph = document.createElement("p");
+    paragraph.className = className;
+    paragraph.textContent = value;
+    return paragraph;
   }
 
   function renderExperience() {
@@ -330,7 +379,7 @@
 
       const type = document.createElement("span");
       setTypeClass(type, project.type);
-      type.textContent = project.type;
+      type.textContent = typeLabel(project.type);
 
       const status = document.createElement("span");
       setStatusClass(status, project.status);
@@ -339,18 +388,20 @@
       badges.append(type, status);
 
       const title = document.createElement("h3");
-      title.textContent = project.title;
+      appendProjectTitle(title, project.title);
 
-      const summary = document.createElement("p");
-      summary.className = "card-copy";
-      summary.textContent = project.summary;
+      const summary = renderSummary("card-copy", project.summary);
 
       const actions = document.createElement("div");
       actions.className = "card-actions";
-      actions.append(
+      const actionButtons = [
         createButton(currentLang === "ko" ? "자세히 보기" : "View Details", project.detailUrl, "button"),
         createButton("GitHub", project.githubUrl, "button")
-      );
+      ];
+      if (project.liveUrl) {
+        actionButtons.push(createLiveDemoButton(project.liveUrl, "button"));
+      }
+      actions.append(...actionButtons);
 
       header.append(number, badges);
       article.append(header, title, summary);
@@ -358,6 +409,34 @@
       article.appendChild(actions);
       target.appendChild(article);
     });
+  }
+
+  function equalizeElementHeights(selector) {
+    const items = document.querySelectorAll(selector);
+
+    if (!items.length) {
+      return;
+    }
+
+    items.forEach(function (item) {
+      item.style.minHeight = "";
+    });
+
+    const maxHeight = Math.max.apply(
+      null,
+      Array.prototype.map.call(items, function (item) {
+        return item.offsetHeight;
+      })
+    );
+
+    items.forEach(function (item) {
+      item.style.minHeight = maxHeight + "px";
+    });
+  }
+
+  function equalizeProjectCardBlocks() {
+    equalizeElementHeights(".project-card h3");
+    equalizeElementHeights(".project-card .card-copy");
   }
 
   function renderListPanel(renderName, title) {
@@ -503,7 +582,7 @@
 
     const type = document.createElement("span");
     setTypeClass(type, detail.type);
-    type.textContent = detail.type;
+    type.textContent = typeLabel(detail.type);
 
     const status = document.createElement("span");
     setStatusClass(status, detail.status);
@@ -512,18 +591,20 @@
     badges.append(type, status);
 
     const title = document.createElement("h1");
-    title.textContent = detail.title;
+    appendProjectTitle(title, detail.title);
 
-    const summary = document.createElement("p");
-    summary.className = "detail-copy";
-    summary.textContent = detail.summary;
+    const summary = renderSummary("detail-copy", detail.summary);
 
     const actions = document.createElement("div");
     actions.className = "card-actions detail-actions";
-    actions.append(
+    const actionButtons = [
       createButton(currentLang === "ko" ? "프로젝트로 돌아가기" : "Back to Projects", "../index.html#projects", "button"),
       createButton("GitHub", detail.githubUrl, "button")
-    );
+    ];
+    if (detail.liveUrl) {
+      actionButtons.push(createLiveDemoButton(detail.liveUrl, "button"));
+    }
+    actions.append(...actionButtons);
 
     copy.append(actions, badges, title, summary);
     appendTags(copy, detail.tags);
@@ -647,6 +728,7 @@
       renderExperience();
       renderSkills();
       renderProjects();
+      equalizeProjectCardBlocks();
       renderAwards();
       renderListPanel("publications", locale().sections.publicationsTitle);
       renderContact();
@@ -655,7 +737,21 @@
     setupReveal();
   }
 
+  function setupProjectSummaryResize() {
+    let resizeTimer = null;
+
+    window.addEventListener("resize", function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(equalizeProjectCardBlocks, 150);
+    });
+  }
+
   setupLanguageButtons();
   setupMenu();
+  setupProjectSummaryResize();
   renderAll();
+
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(equalizeProjectCardBlocks);
+  }
 })();

@@ -10,8 +10,8 @@
   --muted: #999999;
   --muted-soft: #666666;
   --link: #c3d9f3;
-  --success: #5fa657;
-  --warning: #d4a017;
+  --danger: #e07680;
+  --success: #5fc98a;
   --max: 1240px;
   --section: 112px;
   --gutter: 24px;
@@ -35,12 +35,12 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0 1px, transparent 1px 96px),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0 2px, transparent 2px 96px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 28%),
     var(--canvas);
   background-attachment: fixed;
   background-size: 96px 100%, 100% 100%, auto;
-  animation: background-pan 42s linear infinite;
+  animation: background-pan 18s linear infinite;
   color: var(--text);
   font-family: var(--font-body);
   line-break: strict;
@@ -240,7 +240,6 @@ h3 {
 }
 
 .hero-role,
-.hero-copy,
 .prose,
 .card-copy,
 .detail-copy {
@@ -252,12 +251,6 @@ h3 {
   margin: 22px 0 0;
   color: var(--body-strong);
   font-size: clamp(18px, 2vw, 28px);
-}
-
-.hero-copy {
-  max-width: 680px;
-  margin: 20px 0 0;
-  font-size: 18px;
 }
 
 .tag-row {
@@ -272,7 +265,7 @@ h3 {
 .hero-contact-list {
   width: 100%;
   max-width: 420px;
-  margin: 32px auto 0;
+  margin: 80px auto 0;
 }
 
 .tag {
@@ -339,15 +332,11 @@ h3 {
 }
 
 .status.is-progress {
-  color: var(--success);
+  color: var(--danger);
 }
 
 .status.is-completed {
-  color: var(--link);
-}
-
-.badge-type.is-team {
-  color: var(--warning);
+  color: var(--success);
 }
 
 .badge-group {
@@ -391,11 +380,15 @@ h3 {
   font-size: 12px;
 }
 
-.timeline ul,
-.detail-list {
+.timeline ul {
   margin: 14px 0 0;
   padding-left: 18px;
   color: var(--body);
+}
+
+ul.card-copy,
+ul.detail-copy {
+  padding-left: 18px;
 }
 
 .experience-group {
@@ -408,7 +401,7 @@ h3 {
 
 .experience-group h4 {
   margin: 0;
-  color: var(--text);
+  color: var(--link);
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 400;
@@ -501,10 +494,19 @@ h3 {
   text-wrap: balance;
   white-space: pre-line;
   word-break: keep-all;
+  color: var(--link);
+}
+
+.project-title-main {
+  font-size: 1.2em;
 }
 
 .card-copy {
   margin: 18px 0 0;
+}
+
+.project-card .card-copy {
+  font-size: 15px;
 }
 
 .card-actions {
@@ -534,6 +536,34 @@ h3 {
 .button.secondary {
   border-color: var(--text);
   color: var(--text);
+}
+
+.button-live {
+  gap: 8px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 0 var(--success);
+  animation: live-dot-pulse 2s ease-out infinite;
+}
+
+@keyframes live-dot-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--success) 55%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 7px color-mix(in srgb, var(--success) 0%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .live-dot {
+    animation: none;
+  }
 }
 
 .button.is-disabled {
@@ -613,6 +643,7 @@ footer,
   letter-spacing: 0;
   text-transform: none;
   white-space: pre-line;
+  color: var(--link);
 }
 
 .detail-actions {
