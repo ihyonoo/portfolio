@@ -3,7 +3,7 @@ const ko = {
     wordmark: "최현우",
     title: "최현우 | Portfolio",
     description: "최현우의 AI, Computer Vision, Backend 프로젝트 포트폴리오입니다.",
-    footer: "© 2026 최현우. All rights reserved."
+    footer: "© 2026 Hyunwoo Choi. All rights reserved."
   },
   nav: {
     about: "소개",
@@ -16,9 +16,7 @@ const ko = {
   hero: {
     eyebrow: "PORTFOLIO",
     title: "최현우",
-    role: "AI · Computer Vision · Backend",
-    copy:
-      "AI / Computer Vision과 Backend 프로젝트를 통해 데이터와 모델, API 흐름을 실제로 동작하는 형태로 연결해 왔습니다."
+    role: "AI · Computer Vision · Backend · Blockchain"
   },
   sections: {
     experienceEyebrow: "EXPERIENCE",
@@ -61,7 +59,7 @@ const ko = {
       role: "학부 연구생",
       period: "2025.03.26 - 현재",
       bullets: [
-        "보안 세미나(암호학), 기술 세미나(포렌식/모의해킹/블록체인/DID), 논문 분석 세미나 참가 및 발표",
+        "매주 보안 세미나(암호학), 기술 세미나(포렌식/모의해킹/블록체인/DID), 논문 분석 세미나 참가 및 발표",
         "보안 기사 작성 및 전시",
         "2026 한국암호포럼 암호인재통합워크숍 참가",
         "2026 대학정보보호동아리 활동",
@@ -164,44 +162,45 @@ const ko = {
   ],
   projects: [
     {
+      id: "mediledger",
+      title: "Mediledger & EquipTrace",
+      status: "In Progress",
+      type: "Individual",
+      summary: [
+        "RTLS 기반 실내 의료 장비 위치 추적",
+        "블록체인을 활용한 의료 장비 사용 이력 무결성 보장",
+        "NFC 기반 장비 식별 및 장비 대여/반납"
+      ],
+      stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
+      detailUrl: "projects/mediledger-equptrace.html",
+      githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
+    },
+    {
       id: "visionops",
       title: "VisionOps",
       status: "In Progress",
       type: "Individual",
-      summary:
-        "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
+      summary: ["요약 1", "요약 2", "요약 3"],
       stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
       detailUrl: "projects/visionops.html",
       githubUrl: "https://github.com/ihyonoo/visionops"
-    },
-    {
-      id: "mediledger",
-      title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
-      status: "In Progress",
-      type: "Individual",
-      summary:
-        "RTLS 기반 위치 추적, NFC 사용 이력, Hyperledger Besu 무결성 검증을 연결한 의료 장비 관리 시스템.",
-      stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
-      detailUrl: "projects/mediledger-equptrace.html",
-      githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
     },
     {
       id: "hateSpeech",
       title: "KoELECTRA 기반 한국어 혐오 표현 탐지 시스템",
       status: "Completed",
       type: "Individual",
-      summary: "K-MHaS 데이터 기반 한국어 혐오 표현 8개 유형 멀티라벨 분류와 Streamlit 데모.",
+      summary: ["요약 1", "요약 2", "요약 3"],
       stack: "Python/PyTorch/Transformers/KoELECTRA/Streamlit",
       detailUrl: "projects/hate-speech-detection.html",
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
     },
     {
       id: "smartglass",
-      title: "스마트 글래스 시뮬레이션",
+      title: "NAY-BEN - 스마트 글래스 시뮬레이션 시스템",
       status: "Completed",
       type: "Team",
-      summary:
-        "음성 명령으로 길찾기·이미지 번역·실시간 통역·여행지 질문응답(RAG)을 오버레이 UI로 보여주는 웹캠 기반 스마트 글래스 시뮬레이션. 5인 팀에서 프론트엔드/UI 담당.",
+      summary: ["요약 1", "요약 2", "요약 3"],
       stack: "Python/FastAPI/React/Vite/TailwindCSS/Three.js",
       detailUrl: "projects/smartglass-simulation.html",
       githubUrl: "https://github.com/Yoon-Tae-Jun/smartglass-simulation"
@@ -266,8 +265,7 @@ const ko = {
       title: "VisionOps",
       status: "In Progress",
       type: "Individual",
-      summary:
-        "Object Detection, Segmentation, Classification, Pose Estimation 등 컴퓨터 비전 모델 전반을 다루는 로컬 우선 Computer Vision Ops 웹 플랫폼.",
+      summary: ["요약 1", "요약 2", "요약 3"],
       mediaLabel: "Computer Vision · MLOps Platform",
       tags: ["FastAPI", "SQLAlchemy", "React", "TypeScript", "Detection", "Segmentation", "Classification", "Pose Estimation"],
       sections: [
@@ -300,11 +298,14 @@ const ko = {
       githubUrl: "https://github.com/ihyonoo/visionops"
     },
     mediledger: {
-      title: "Mediledger & EqupTrace\n- 블록체인 기반 의료 장비 사용 이력 관리 시스템",
+      title: "Mediledger & EquipTrace",
       status: "In Progress",
       type: "Individual",
-      summary:
-        "RTLS 기반 위치 추적, NFC 사용 이력, Hyperledger Besu 무결성 검증을 연결한 의료 장비 관리 시스템.",
+      summary: [
+        "RTLS 기반 실내 의료 장비 위치 추적",
+        "블록체인을 활용한 의료 장비 사용 이력 무결성 보장",
+        "NFC 기반 장비 식별 및 장비 대여/반납"
+      ],
       mediaLabel: "RTLS · NFC · Blockchain Integrity",
       tags: ["FastAPI", "PostgreSQL", "Redis", "React", "Hyperledger Besu", "Solidity", "QBFT"],
       sections: [
@@ -340,7 +341,7 @@ const ko = {
       title: "KoELECTRA 기반 한국어 혐오 표현 탐지 시스템",
       status: "Completed",
       type: "Individual",
-      summary: "K-MHaS 데이터 기반 한국어 혐오 표현 8개 유형 멀티라벨 분류와 Streamlit 데모.",
+      summary: ["요약 1", "요약 2", "요약 3"],
       mediaLabel: "Korean NLP · Multi-label Classification",
       tags: ["Python", "PyTorch", "Transformers", "KoELECTRA", "Streamlit", "K-MHaS"],
       sections: [
@@ -373,11 +374,10 @@ const ko = {
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
     },
     smartglass: {
-      title: "스마트 글래스 시뮬레이션",
+      title: "NAY-BEN - 스마트 글래스 시뮬레이션 시스템",
       status: "Completed",
       type: "Team",
-      summary:
-        "음성 명령으로 길찾기·이미지 번역·실시간 통역·여행지 질문응답(RAG)을 오버레이 UI로 보여주는 웹캠 기반 스마트 글래스 시뮬레이션. 5인 팀에서 프론트엔드/UI 담당.",
+      summary: ["요약 1", "요약 2", "요약 3"],
       mediaLabel: "AR Glass Simulation · Voice Command",
       tags: ["Python", "FastAPI", "React", "Vite", "TailwindCSS", "Three.js", "CLOVA Speech", "Papago", "RAG"],
       sections: [
@@ -431,9 +431,7 @@ const en = {
   hero: {
     eyebrow: "PORTFOLIO",
     title: "Hyunwoo Choi",
-    role: "AI · Computer Vision · Backend",
-    copy:
-      "I connect data, models, and APIs into working systems through AI, computer vision, and backend projects."
+    role: "AI · Computer Vision · Backend"
   },
   sections: {
     experienceEyebrow: "EXPERIENCE",
@@ -476,7 +474,7 @@ const en = {
       role: "Undergraduate Researcher",
       period: "2025.03.26 - Present",
       bullets: [
-        "Participated in and presented at security seminars on cryptography, technical seminars on forensics, penetration testing, blockchain, and DID, and paper analysis seminars",
+        "Participated in and presented at weekly security seminars on cryptography, technical seminars on forensics, penetration testing, blockchain, and DID, and paper analysis seminars",
         "Authored and exhibited security articles",
         "Participated in the 2026 Korea Cryptography Forum Integrated Cryptography Talent Workshop",
         "Participated in the 2026 university information security club",
@@ -579,6 +577,17 @@ const en = {
   ],
   projects: [
     {
+      id: "mediledger",
+      title: "Mediledger & EquipTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
+      status: "In Progress",
+      type: "Individual",
+      summary:
+        "A medical equipment management system that connects RTLS-based location tracking, NFC usage history, and Hyperledger Besu integrity verification.",
+      stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
+      detailUrl: "projects/mediledger-equptrace.html",
+      githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
+    },
+    {
       id: "visionops",
       title: "VisionOps",
       status: "In Progress",
@@ -588,17 +597,6 @@ const en = {
       stack: "FastAPI/SQLAlchemy/React/TypeScript/Vite",
       detailUrl: "projects/visionops.html",
       githubUrl: "https://github.com/ihyonoo/visionops"
-    },
-    {
-      id: "mediledger",
-      title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
-      status: "In Progress",
-      type: "Individual",
-      summary:
-        "A medical equipment management system that connects RTLS-based location tracking, NFC usage history, and Hyperledger Besu integrity verification.",
-      stack: "FastAPI/PostgreSQL/Redis/React/Hyperledger Besu",
-      detailUrl: "projects/mediledger-equptrace.html",
-      githubUrl: "https://github.com/ihyonoo/capstone-blockchain-medical-equipment-management"
     },
     {
       id: "hateSpeech",
@@ -613,7 +611,7 @@ const en = {
     },
     {
       id: "smartglass",
-      title: "Smart Glass Simulation",
+      title: "NAY-BEN - Smart Glass Simulation System",
       status: "Completed",
       type: "Team",
       summary:
@@ -716,7 +714,7 @@ const en = {
       githubUrl: "https://github.com/ihyonoo/visionops"
     },
     mediledger: {
-      title: "Mediledger & EqupTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
+      title: "Mediledger & EquipTrace\n- Blockchain-Based Medical Equipment Usage History Management System",
       status: "In Progress",
       type: "Individual",
       summary:
@@ -790,7 +788,7 @@ const en = {
       githubUrl: "https://github.com/ihyonoo/koelectra-hate-speech-detection"
     },
     smartglass: {
-      title: "Smart Glass Simulation",
+      title: "NAY-BEN - Smart Glass Simulation System",
       status: "Completed",
       type: "Team",
       summary:
