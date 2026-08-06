@@ -41,6 +41,22 @@
     return true;
   }
 
+  const themeStorageKey = "portfolio-theme";
+
+  function currentTheme() {
+    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  }
+
+  function writeStoredTheme(theme) {
+    try {
+      window.localStorage.setItem(themeStorageKey, theme);
+    } catch (error) {
+      return false;
+    }
+
+    return true;
+  }
+
   function locale() {
     return data.locales[currentLang] || data.locales[data.defaultLang] || data.locales.ko;
   }
@@ -660,6 +676,35 @@
     });
   }
 
+  function setupThemeToggle() {
+    const toggle = document.querySelector("[data-theme-toggle]");
+
+    if (!toggle) {
+      return;
+    }
+
+    toggle.addEventListener("click", function () {
+      const nextTheme = currentTheme() === "light" ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", nextTheme);
+      writeStoredTheme(nextTheme);
+      updateThemeToggle();
+    });
+
+    updateThemeToggle();
+  }
+
+  function updateThemeToggle() {
+    const toggle = document.querySelector("[data-theme-toggle]");
+
+    if (!toggle) {
+      return;
+    }
+
+    const isLight = currentTheme() === "light";
+    toggle.setAttribute("aria-pressed", String(isLight));
+    toggle.setAttribute("aria-label", currentLang === "ko" ? "테마 전환" : "Toggle theme");
+  }
+
   function setupMenu() {
     const toggle = document.querySelector("[data-menu-toggle]");
     const nav = document.querySelector("[data-site-nav]");
@@ -720,6 +765,7 @@
     setHtmlLang();
     setTextBindings();
     updateLanguageButtons();
+    updateThemeToggle();
 
     if (page === "project") {
       renderProjectDetail();
@@ -748,6 +794,7 @@
 
   setupLanguageButtons();
   setupMenu();
+  setupThemeToggle();
   setupProjectSummaryResize();
   renderAll();
 
