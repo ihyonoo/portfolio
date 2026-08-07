@@ -12,6 +12,7 @@
   --link: #c3d9f3;
   --danger: #e07680;
   --success: #5fc98a;
+  --warning: #e0b64d;
   --grid-line: rgba(255, 255, 255, 0.02);
   --vignette: rgba(255, 255, 255, 0.035);
   --header-bg: rgba(5, 6, 7, 0.9);
@@ -37,6 +38,7 @@
   --link: #1d4ed8;
   --danger: #b3323e;
   --success: #2f7a4f;
+  --warning: #a6791a;
   --grid-line: rgba(0, 0, 0, 0.025);
   --vignette: rgba(0, 0, 0, 0.035);
   --header-bg: rgba(247, 246, 243, 0.9);
@@ -393,7 +395,7 @@ h3 {
 }
 
 .status.is-progress {
-  color: var(--danger);
+  color: var(--warning);
 }
 
 .status.is-completed {
