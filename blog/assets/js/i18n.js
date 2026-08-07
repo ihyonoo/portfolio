@@ -136,28 +136,28 @@ const ko = {
   ],
   skills: [
     {
+      title: "Languages",
+      items: ["Python", "C", "Java"]
+    },
+    {
       title: "AI / Computer Vision",
-      items: ["PyTorch", "OpenCV", "YOLO", "ResNet18"]
+      items: ["PyTorch", "OpenCV", "YOLO", "ResNet18", "CVAT"]
     },
     {
-      title: "Backend / Database",
-      items: ["FastAPI", "PostgreSQL", "Redis", "psycopg", "SQLAlchemy"]
-    },
-    {
-      title: "Blockchain / Security",
+      title: "Blockchain",
       items: ["Hyperledger Besu", "Solidity"]
     },
     {
-      title: "Frontend / Product",
-      items: ["React", "Vite", "Next.js", "TypeScript", "Tailwind CSS"]
-    },
-    {
       title: "Infra / Tools",
-      items: ["Docker", "Docker Compose", "Linux", "Git"]
+      items: ["Docker", "Docker Compose", "Linux", "Git", "Naver Cloud", "GitHub Actions", "Prometheus", "Grafana"]
     },
     {
-      title: "Languages",
-      items: ["Python", "C", "JavaScript/TypeScript", "Solidity"]
+      title: "Backend / Database",
+      items: ["FastAPI", "PostgreSQL", "Redis", "psycopg"]
+    },
+    {
+      title: "Frontend",
+      items: ["React", "Vite", "TypeScript", "Tailwind CSS"]
     }
   ],
   projects: [
@@ -577,28 +577,28 @@ const en = {
   ],
   skills: [
     {
+      title: "Languages",
+      items: ["Python", "C", "Java"]
+    },
+    {
       title: "AI / Computer Vision",
-      items: ["PyTorch", "OpenCV", "YOLO", "ResNet18"]
+      items: ["PyTorch", "OpenCV", "YOLO", "ResNet18", "CVAT"]
     },
     {
-      title: "Backend / Database",
-      items: ["FastAPI", "PostgreSQL", "Redis", "psycopg", "SQLAlchemy"]
-    },
-    {
-      title: "Blockchain / Security",
+      title: "Blockchain",
       items: ["Hyperledger Besu", "Solidity"]
     },
     {
-      title: "Frontend / Product",
-      items: ["React", "Vite", "Next.js", "TypeScript", "Tailwind CSS"]
-    },
-    {
       title: "Infra / Tools",
-      items: ["Docker", "Docker Compose", "Linux", "Git"]
+      items: ["Docker", "Docker Compose", "Linux", "Git", "Naver Cloud", "GitHub Actions", "Prometheus", "Grafana"]
     },
     {
-      title: "Languages",
-      items: ["Python", "C", "JavaScript/TypeScript", "Solidity"]
+      title: "Backend / Database",
+      items: ["FastAPI", "PostgreSQL", "Redis", "psycopg"]
+    },
+    {
+      title: "Frontend",
+      items: ["React", "Vite", "TypeScript", "Tailwind CSS"]
     }
   ],
   projects: [
