@@ -14,20 +14,14 @@ const ko = {
     publications: "논문"
   },
   hero: {
-    eyebrow: "PORTFOLIO",
     title: "최현우",
     role: "AI · Computer Vision · Backend · Blockchain"
   },
   sections: {
-    experienceEyebrow: "EXPERIENCE",
     experienceTitle: "경력",
-    skillsEyebrow: "SKILLS",
     skillsTitle: "주요 기술",
-    projectsEyebrow: "PROJECTS",
     projectsTitle: "프로젝트",
-    publicationsEyebrow: "PUBLICATIONS",
     publicationsTitle: "논문",
-    awardsEyebrow: "AWARDS",
     awardsTitle: "수상"
   },
   experience: [
@@ -141,7 +135,7 @@ const ko = {
     },
     {
       title: "AI / Computer Vision",
-      items: ["PyTorch", "OpenCV", "YOLO", "ResNet18", "CVAT"]
+      items: ["PyTorch", "OpenCV", "YOLO", "CVAT"]
     },
     {
       title: "Blockchain",
@@ -149,7 +143,7 @@ const ko = {
     },
     {
       title: "Infra / Tools",
-      items: ["Docker", "Docker Compose", "Linux", "Git", "Naver Cloud", "GitHub Actions", "Prometheus", "Grafana"]
+      items: ["Docker", "Linux", "Git", "GitHub Actions", "Naver Cloud", "Prometheus", "Grafana"]
     },
     {
       title: "Backend / Database",
@@ -455,20 +449,14 @@ const en = {
     publications: "Publications"
   },
   hero: {
-    eyebrow: "PORTFOLIO",
     title: "Hyunwoo Choi",
     role: "AI · Computer Vision · Backend · Blockchain"
   },
   sections: {
-    experienceEyebrow: "EXPERIENCE",
     experienceTitle: "Experience",
-    skillsEyebrow: "SKILLS",
     skillsTitle: "Main Skills",
-    projectsEyebrow: "PROJECTS",
     projectsTitle: "Project",
-    publicationsEyebrow: "PUBLICATIONS",
     publicationsTitle: "Publications",
-    awardsEyebrow: "AWARDS",
     awardsTitle: "Awards"
   },
   experience: [
@@ -582,7 +570,7 @@ const en = {
     },
     {
       title: "AI / Computer Vision",
-      items: ["PyTorch", "OpenCV", "YOLO", "ResNet18", "CVAT"]
+      items: ["PyTorch", "OpenCV", "YOLO", "CVAT"]
     },
     {
       title: "Blockchain",
@@ -590,7 +578,7 @@ const en = {
     },
     {
       title: "Infra / Tools",
-      items: ["Docker", "Docker Compose", "Linux", "Git", "Naver Cloud", "GitHub Actions", "Prometheus", "Grafana"]
+      items: ["Docker", "Linux", "Git", "GitHub Actions", "Naver Cloud", "Prometheus", "Grafana"]
     },
     {
       title: "Backend / Database",
