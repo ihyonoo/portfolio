@@ -854,7 +854,13 @@
       cursorApp.tubes.setLightsColors(randomColors(4));
     });
 
-    window.addEventListener("pagehide", function () {
+    window.addEventListener("pagehide", function (event) {
+      // BFCache로 보관된 페이지는 뒤로가기 시 스크립트를 다시 실행하지 않는다.
+      // 이때 renderer를 dispose하면 복원된 캔버스가 정지한 채로 남는다.
+      if (event.persisted) {
+        return;
+      }
+
       disposed = true;
 
       if (cursorApp && typeof cursorApp.dispose === "function") {
