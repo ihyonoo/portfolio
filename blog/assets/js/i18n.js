@@ -7,7 +7,7 @@ const ko = {
   },
   nav: {
     about: "소개",
-    experience: "경력",
+    experience: "경험",
     skills: "주요 기술",
     projects: "프로젝트",
     awards: "수상",
@@ -18,7 +18,7 @@ const ko = {
     role: "AI · Computer Vision · Backend · Blockchain"
   },
   sections: {
-    experienceTitle: "경력",
+    experienceTitle: "경험",
     skillsTitle: "주요 기술",
     projectsTitle: "프로젝트",
     publicationsTitle: "논문",

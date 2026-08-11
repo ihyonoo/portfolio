@@ -41,22 +41,6 @@
     return true;
   }
 
-  const themeStorageKey = "portfolio-theme";
-
-  function currentTheme() {
-    return document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
-  }
-
-  function writeStoredTheme(theme) {
-    try {
-      window.localStorage.setItem(themeStorageKey, theme);
-    } catch (error) {
-      return false;
-    }
-
-    return true;
-  }
-
   function locale() {
     return data.locales[currentLang] || data.locales[data.defaultLang] || data.locales.ko;
   }
@@ -722,35 +706,6 @@
     });
   }
 
-  function setupThemeToggle() {
-    const toggle = document.querySelector("[data-theme-toggle]");
-
-    if (!toggle) {
-      return;
-    }
-
-    toggle.addEventListener("click", function () {
-      const nextTheme = currentTheme() === "light" ? "dark" : "light";
-      document.documentElement.setAttribute("data-theme", nextTheme);
-      writeStoredTheme(nextTheme);
-      updateThemeToggle();
-    });
-
-    updateThemeToggle();
-  }
-
-  function updateThemeToggle() {
-    const toggle = document.querySelector("[data-theme-toggle]");
-
-    if (!toggle) {
-      return;
-    }
-
-    const isLight = currentTheme() === "light";
-    toggle.setAttribute("aria-pressed", String(isLight));
-    toggle.setAttribute("aria-label", currentLang === "ko" ? "테마 전환" : "Toggle theme");
-  }
-
   function setupMenu() {
     const toggle = document.querySelector("[data-menu-toggle]");
     const nav = document.querySelector("[data-site-nav]");
@@ -811,8 +766,6 @@
     setHtmlLang();
     setTextBindings();
     updateLanguageButtons();
-    updateThemeToggle();
-
     if (page === "project") {
       renderProjectDetail();
     } else {
@@ -838,10 +791,83 @@
     });
   }
 
+  // 페이지 전체에서 3D 튜브 커서 효과를 활성화한다.
+  // 터치 기기와 모션 감소 설정에서는 정적인 기존 히어로를 그대로 유지한다.
+  function setupTubesCursor() {
+    const canvas = document.querySelector("[data-tubes-cursor]");
+
+    if (
+      !canvas ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !window.matchMedia("(pointer: fine)").matches
+    ) {
+      return;
+    }
+
+    // 라이브러리는 canvas의 부모 크기를 기준으로 렌더러를 만든다.
+    // body는 스크롤 전체 높이이므로, 화면 크기의 전용 레이어를 부모로 사용한다.
+    const layer = document.createElement("div");
+    layer.className = "tubes-cursor-layer";
+    canvas.replaceWith(layer);
+    layer.appendChild(canvas);
+
+    let cursorApp = null;
+    let disposed = false;
+    const tubeColors = ["#5e72e4", "#8965e0", "#f5365c"];
+    const lightColors = ["#21d4fd", "#b721ff", "#f4d03f", "#11cdef"];
+
+    function randomColors(count) {
+      return Array.from({ length: count }, function () {
+        return "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, "0");
+      });
+    }
+
+    // canvas의 레이아웃이 확정된 다음 초기화해 WebGL의 NaN 크기 오류를 방지한다.
+    window.setTimeout(function () {
+      import("https://cdn.jsdelivr.net/npm/threejs-components@0.0.19/build/cursors/tubes1.min.js")
+        .then(function (module) {
+          if (disposed) {
+            return;
+          }
+
+          cursorApp = module.default(canvas, {
+            bloom: { threshold: 0, strength: 1.7, radius: 0.1 },
+            tubes: {
+              count: 14,
+              colors: tubeColors,
+              lights: { intensity: 320, colors: lightColors }
+            }
+          });
+        })
+        .catch(function (error) {
+          // 외부 CDN을 불러올 수 없더라도 포트폴리오의 기본 콘텐츠는 정상적으로 표시한다.
+          console.warn("Tubes cursor effect could not be loaded.", error);
+        });
+    }, 100);
+
+    document.addEventListener("click", function (event) {
+      if (!cursorApp || event.target.closest("a, button")) {
+        return;
+      }
+
+      cursorApp.tubes.setColors(randomColors(3));
+      cursorApp.tubes.setLightsColors(randomColors(4));
+    });
+
+    window.addEventListener("pagehide", function () {
+      disposed = true;
+
+      if (cursorApp && typeof cursorApp.dispose === "function") {
+        cursorApp.dispose();
+      }
+    },
+    { once: true });
+  }
+
   setupLanguageButtons();
   setupMenu();
-  setupThemeToggle();
   setupProjectSummaryResize();
+  setupTubesCursor();
   renderAll();
 
   if (document.fonts && document.fonts.ready) {
