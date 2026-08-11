@@ -346,6 +346,70 @@
     });
   }
 
+  // 기술명 → 로고 파일명: "Docker Compose" → "docker-compose"
+  function iconSlug(name) {
+    return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  }
+
+  // svg 우선, 없으면 png. 둘 다 없으면 로고 자리만 비우고 이름은 그대로 표시
+  function iconSources(name) {
+    const base = "assets/icons/" + iconSlug(name);
+    return [base + ".svg", base + ".png"];
+  }
+
+  function buildSkillCell(item) {
+    const cell = document.createElement("li");
+    cell.className = "skill-item";
+
+    // svg를 먼저 찾고, 없으면 png로 넘어간다
+    const sources = iconSources(item);
+    let attempt = 0;
+
+    const logo = document.createElement("img");
+    logo.className = "skill-item-logo";
+    logo.alt = "";
+    logo.loading = "lazy";
+    logo.addEventListener("error", function () {
+      attempt += 1;
+
+      if (attempt < sources.length) {
+        logo.src = sources[attempt];
+        return;
+      }
+
+      logo.style.visibility = "hidden";
+    });
+    logo.src = sources[0];
+
+    const badge = document.createElement("span");
+    badge.className = "skill-item-badge";
+    badge.appendChild(logo);
+
+    const name = document.createElement("span");
+    name.className = "skill-item-name";
+    name.textContent = item;
+
+    cell.append(badge, name);
+    return cell;
+  }
+
+  function buildSkillGroupCard(group) {
+    const article = document.createElement("article");
+    article.className = "skill-group";
+
+    const title = document.createElement("h3");
+    title.textContent = group.title;
+
+    const items = document.createElement("ul");
+    items.className = "skill-items";
+    group.items.forEach(function (item) {
+      items.appendChild(buildSkillCell(item));
+    });
+
+    article.append(title, items);
+    return article;
+  }
+
   function renderSkills() {
     const target = document.querySelector('[data-render="skills"]');
 
@@ -356,17 +420,7 @@
     target.replaceChildren();
 
     locale().skills.forEach(function (group) {
-      const article = document.createElement("article");
-      article.className = "skill-group";
-
-      const title = document.createElement("h3");
-      title.textContent = group.title;
-
-      const items = document.createElement("p");
-      items.textContent = group.items.join(" · ");
-
-      article.append(title, items);
-      target.appendChild(article);
+      target.appendChild(buildSkillGroupCard(group));
     });
   }
 
@@ -455,7 +509,7 @@
     equalizeElementHeights(".project-card .card-copy");
   }
 
-  function renderListPanel(renderName, title) {
+  function renderListPanel(renderName) {
     const target = document.querySelector('[data-render="' + renderName + '"]');
 
     if (!target) {
@@ -466,10 +520,6 @@
 
     const panel = document.createElement("section");
     panel.className = "list-panel";
-
-    const heading = document.createElement("h3");
-    heading.textContent = title;
-    panel.appendChild(heading);
 
     locale()[renderName].forEach(function (item) {
       const article = document.createElement("article");
@@ -506,10 +556,6 @@
 
     const panel = document.createElement("section");
     panel.className = "list-panel";
-
-    const heading = document.createElement("h3");
-    heading.textContent = locale().sections.awardsTitle;
-    panel.appendChild(heading);
 
     locale().awards.forEach(function (award) {
       const article = document.createElement("article");
@@ -776,7 +822,7 @@
       renderProjects();
       equalizeProjectCardBlocks();
       renderAwards();
-      renderListPanel("publications", locale().sections.publicationsTitle);
+      renderListPanel("publications");
       renderContact();
     }
 
