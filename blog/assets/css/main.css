@@ -56,6 +56,13 @@ body {
   word-break: keep-all;
 }
 
+/* 튜브 레이어가 덮이면 격자가 절반 정도로 어두워진다. */
+/* 로드 전후 밝기가 튀지 않도록 최종 밝기로 미리 맞춘다. */
+html.has-tubes-cursor {
+  --grid-line: rgba(255, 255, 255, 0.01);
+  --vignette: rgba(255, 255, 255, 0.018);
+}
+
 main,
 footer,
 .site-footer {
@@ -105,7 +112,7 @@ button {
 
 .nav-shell {
   position: relative;
-  width: min(calc(100% - 24px), var(--max));
+  width: min(90%, var(--max));
   height: 92px;
   margin: 0 auto;
   display: grid;
@@ -198,7 +205,7 @@ button {
 }
 
 .section-inner {
-  width: min(calc(100% - 24px), var(--max));
+  width: min(90%, var(--max));
   margin: 0 auto;
   padding: var(--section) 0;
 }
@@ -215,9 +222,15 @@ button {
   position: fixed;
   inset: 0;
   z-index: 0;
-  /* 블룸 레이어는 유지하되 기존 격자 배경이 비치도록 투명도를 낮춘다. */
-  opacity: 0.48;
+  /* 첫 프레임이 준비되기 전에는 감춰 두고 페이드인한다. */
+  opacity: 0;
+  transition: opacity 700ms ease;
   pointer-events: none;
+}
+
+/* 블룸 레이어는 유지하되 기존 격자 배경이 비치도록 투명도를 낮춘다. */
+.tubes-cursor-layer.is-ready {
+  opacity: 0.48;
 }
 
 .tubes-cursor {
@@ -763,7 +776,7 @@ ul.detail-copy {
 
 footer,
 .site-footer {
-  width: min(calc(100% - 24px), var(--max));
+  width: min(90%, var(--max));
   margin: 0 auto;
   padding: 36px 0;
   color: var(--muted-soft);
