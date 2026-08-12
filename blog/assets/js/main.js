@@ -804,6 +804,9 @@
       return;
     }
 
+    // 효과가 켜지는 환경에서만 격자 배경을 덮인 뒤의 밝기로 미리 낮춰 둔다.
+    document.documentElement.classList.add("has-tubes-cursor");
+
     // 라이브러리는 canvas의 부모 크기를 기준으로 렌더러를 만든다.
     // body는 스크롤 전체 높이이므로, 화면 크기의 전용 레이어를 부모로 사용한다.
     const layer = document.createElement("div");
@@ -838,9 +841,18 @@
               lights: { intensity: 320, colors: lightColors }
             }
           });
+
+          // 첫 프레임이 그려진 다음 레이어를 페이드인한다.
+          window.requestAnimationFrame(function () {
+            window.requestAnimationFrame(function () {
+              layer.classList.add("is-ready");
+            });
+          });
         })
         .catch(function (error) {
           // 외부 CDN을 불러올 수 없더라도 포트폴리오의 기본 콘텐츠는 정상적으로 표시한다.
+          // 효과가 없으면 격자 배경은 원래 밝기로 되돌린다.
+          document.documentElement.classList.remove("has-tubes-cursor");
           console.warn("Tubes cursor effect could not be loaded.", error);
         });
     }, 100);
