@@ -116,7 +116,8 @@ button {
   height: 92px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  /* 양쪽 1fr이 같은 폭을 가져가 워드마크·컨트롤 폭과 무관하게 내비게이션이 정중앙에 온다. */
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 30px;
 }
@@ -144,7 +145,7 @@ button {
 
 .site-nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: clamp(16px, 1.8vw, 24px);
 }
 
@@ -211,6 +212,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  justify-self: end;
 }
 
 .menu-toggle {
