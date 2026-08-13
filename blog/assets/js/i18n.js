@@ -11,7 +11,8 @@ const ko = {
     skills: "주요 기술",
     projects: "프로젝트",
     awards: "수상",
-    publications: "논문"
+    publications: "논문",
+    cursorEffectHint: "마우스 커서 이펙트 켜기/끄기"
   },
   hero: {
     title: "최현우",
@@ -446,7 +447,8 @@ const en = {
     skills: "Main Skills",
     projects: "Projects",
     awards: "Awards",
-    publications: "Publications"
+    publications: "Publications",
+    cursorEffectHint: "Toggle the mouse cursor effect"
   },
   hero: {
     title: "Hyunwoo Choi",

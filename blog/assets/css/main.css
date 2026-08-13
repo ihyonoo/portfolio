@@ -124,6 +124,7 @@ button {
 .wordmark,
 .site-nav a,
 .lang-button,
+.effect-toggle,
 .menu-toggle,
 .status,
 .badge-type,
@@ -177,6 +178,23 @@ button {
   color: var(--muted);
   cursor: pointer;
   font-size: 16px;
+}
+
+.effect-toggle {
+  background: transparent;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 999px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 11px 15px;
+}
+
+/* 활성 표현은 언어 토글(.lang-button.is-active)과 동일하게 채움으로 맞춘다. */
+.effect-toggle.is-active {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--canvas);
 }
 
 .lang-button {
