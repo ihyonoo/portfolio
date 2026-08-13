@@ -239,6 +239,13 @@ button {
   height: 100%;
 }
 
+/* canvas는 전용 레이어 안에서만 그려진다.
+   레이어 밖(스크립트 실행 전, 효과 꺼짐, 모션 감소·터치 기기)에서는
+   body 직계 자식으로 남아 100% 크기의 블록이 되어 본문을 밀어낸다. */
+body > .tubes-cursor {
+  display: none;
+}
+
 .hero-home {
   justify-items: center;
   text-align: center;
