@@ -31,18 +31,9 @@ const ko = {
       role: "4학년 재학중",
       period: "2025.03.01 - 현재",
       bullets: [
-        {
-          text: "2026 NAVER Cloud Academy 소버린 AI Literacy 과정 1기 참가",
-          url: "experience/네이버클라우드_발표자료.pdf"
-        },
-        {
-          text: "2026 Wrtn AI 개발자 양성 부트캠프 참가",
-          url: "https://github.com/ihyonoo/ai-job-matching-system"
-        },
-        {
-          text: "2026 로컬 창업동아리 아이디어 리그 경진대회 참가",
-          url: "experience/idea-league-slides.pdf"
-        },
+        "2026 NAVER Cloud Academy 소버린 AI Literacy 과정 1기 참가",
+        "2026 Wrtn AI 개발자 양성 부트캠프 참가",
+        "2026 로컬 창업동아리 아이디어 리그 경진대회 참가",
         "2026-1학기 튜터링(교과: 운영체제) 프로그램 튜터 활동",
         "2025-2학기 튜터링(교과: 정보이론) 프로그램 튜터 활동",
         "학술 동아리 Soft Brain 활동"
@@ -467,18 +458,9 @@ const en = {
       role: "4th-Year Student",
       period: "2025.03.01 - Present",
       bullets: [
-        {
-          text: "Participated in the 1st cohort of the 2026 NAVER Cloud Academy Sovereign AI Literacy program",
-          url: "experience/네이버클라우드_발표자료.pdf"
-        },
-        {
-          text: "Participated in the 2026 Wrtn AI Developer Training Bootcamp",
-          url: "https://github.com/ihyonoo/ai-job-matching-system"
-        },
-        {
-          text: "Participated in the 2026 Local Startup Club Idea League competition",
-          url: "experience/idea-league-slides.pdf"
-        },
+        "Participated in the 1st cohort of the 2026 NAVER Cloud Academy Sovereign AI Literacy program",
+        "Participated in the 2026 Wrtn AI Developer Training Bootcamp",
+        "Participated in the 2026 Local Startup Club Idea League competition",
         "Worked as a tutor for the Operating Systems course in the 2026 spring semester tutoring program",
         "Worked as a tutor for the Information Theory course in the 2025 fall semester tutoring program",
         "Participated in the Soft Brain academic club"
