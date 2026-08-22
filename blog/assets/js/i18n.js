@@ -252,11 +252,6 @@ const ko = {
       label: "GitHub",
       value: "github.com/ihyonoo",
       url: "https://github.com/ihyonoo"
-    },
-    {
-      label: "Tech Blog",
-      value: "velog.io/@hyun_woo",
-      url: "https://velog.io/@hyun_woo/posts"
     }
   ],
   projectDetails: {
@@ -679,11 +674,6 @@ const en = {
       label: "GitHub",
       value: "github.com/ihyonoo",
       url: "https://github.com/ihyonoo"
-    },
-    {
-      label: "Tech Blog",
-      value: "velog.io/@hyun_woo",
-      url: "https://velog.io/@hyun_woo/posts"
     }
   ],
   projectDetails: {
